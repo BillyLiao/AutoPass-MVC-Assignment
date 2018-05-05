@@ -10,8 +10,5 @@ import Foundation
 import UIKit
 
 struct CustomColor {
-    static var lightBackgroundColor = UIColor(red: 46/255, green: 46/255, blue: 41/255, alpha: 1)
-    static var darkBackgroundColor = UIColor(red: 32/255, green: 32/255, blue: 29/255, alpha: 1)
-    static var upGreenColor = UIColor(red: 57/255, green: 181/255, blue: 153/255, alpha: 1)
-    static var downRedColor = UIColor(red: 233/255, green: 78/255, blue: 80/255, alpha: 1)
+    static let mainBlueGreen = UIColor(red: 0/255.0, green: 204/255.0, blue: 198/255.0, alpha: 1)
 }
