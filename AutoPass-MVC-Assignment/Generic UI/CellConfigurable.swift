@@ -10,5 +10,5 @@ import Foundation
 
 protocol CellConfigurable: class {
     associatedtype Configurator
-    var cellConfigurator: Configurator { get set }
+    var cellConfigurator: Configurator? { get set }
 }
