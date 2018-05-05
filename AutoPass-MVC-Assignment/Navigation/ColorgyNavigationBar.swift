@@ -62,12 +62,12 @@ open class ColorgyNavigationBar: UIView {
 	// MARK: - Init
 	public init() {
 		super.init(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: UIScreen.main.bounds.width, height: 64)))
-		backgroundColor = CustomColor.lightBackgroundColor
+		backgroundColor = CustomColor.mainBlueGreen
         titleLabel = getTitleLabel()
         
         addSubview(titleLabel)
         
-        configureBottomLine()
+        // configureBottomLine()
         
         titleLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
