@@ -31,6 +31,9 @@
 		51BE22F0209D7A3400FF0867 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DE209D7A3400FF0867 /* RealmError.swift */; };
 		51BE22F1209D7A3400FF0867 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DF209D7A3400FF0867 /* RealmManager.swift */; };
 		51BE22F2209D7A3400FF0867 /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22E0209D7A3400FF0867 /* RealmObject.swift */; };
+		51BE22F7209D7DE800FF0867 /* ParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22F3209D7DE700FF0867 /* ParkList.swift */; };
+		51BE22F8209D7DE800FF0867 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22F5209D7DE700FF0867 /* Park.swift */; };
+		51BE22F9209D7DE800FF0867 /* GetParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22F6209D7DE800FF0867 /* GetParkList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		51BE22DE209D7A3400FF0867 /* RealmError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		51BE22DF209D7A3400FF0867 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		51BE22E0209D7A3400FF0867 /* RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		51BE22F3209D7DE700FF0867 /* ParkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkList.swift; sourceTree = "<group>"; };
+		51BE22F5209D7DE700FF0867 /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		51BE22F6209D7DE800FF0867 /* GetParkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParkList.swift; sourceTree = "<group>"; };
 		BC66A3065A9E3D2ED130D70E /* Pods_AutoPass_MVC_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoPass_MVC_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +110,8 @@
 				51BE22DD209D7A3400FF0867 /* Realm */,
 				51BE22B8209D78B200FF0867 /* AppDelegate.swift */,
 				51BE22BA209D78B200FF0867 /* ViewController.swift */,
+				51BE22F6209D7DE800FF0867 /* GetParkList.swift */,
+				51BE22F4209D7DE700FF0867 /* Model */,
 				51BE22BC209D78B200FF0867 /* Main.storyboard */,
 				51BE22BF209D78B200FF0867 /* Assets.xcassets */,
 				51BE22C1209D78B200FF0867 /* LaunchScreen.storyboard */,
@@ -163,6 +171,15 @@
 				51BE22E0209D7A3400FF0867 /* RealmObject.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		51BE22F4209D7DE700FF0867 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22F3209D7DE700FF0867 /* ParkList.swift */,
+				51BE22F5209D7DE700FF0867 /* Park.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		71A8C6A23E0909D42CF46D11 /* Frameworks */ = {
@@ -331,10 +348,13 @@
 				51BE22EC209D7A3400FF0867 /* Navigable.swift in Sources */,
 				51BE22E6209D7A3400FF0867 /* SwiftyJSONExtension.swift in Sources */,
 				51BE22E9209D7A3400FF0867 /* UIViewExtension.swift in Sources */,
+				51BE22F7209D7DE800FF0867 /* ParkList.swift in Sources */,
 				51BE22E8209D7A3400FF0867 /* UIViewControllerExtension.swift in Sources */,
 				51BE22E2209D7A3400FF0867 /* CGFloat+Int+UIView.swift in Sources */,
+				51BE22F8209D7DE800FF0867 /* Park.swift in Sources */,
 				51BE22ED209D7A3400FF0867 /* JSONDecodable.swift in Sources */,
 				51BE22EE209D7A3400FF0867 /* NetworkClient.swift in Sources */,
+				51BE22F9209D7DE800FF0867 /* GetParkList.swift in Sources */,
 				51BE22F2209D7A3400FF0867 /* RealmObject.swift in Sources */,
 				51BE22F0209D7A3400FF0867 /* RealmError.swift in Sources */,
 				51BE22EB209D7A3400FF0867 /* ColorgyNavigationTransitioningDelegate.swift in Sources */,
