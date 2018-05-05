@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		49BB131568FBDF4BDE56D8D8 /* Pods_AutoPass_MVC_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A3065A9E3D2ED130D70E /* Pods_AutoPass_MVC_Assignment.framework */; };
 		51BE22B9209D78B200FF0867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22B8209D78B200FF0867 /* AppDelegate.swift */; };
-		51BE22BB209D78B200FF0867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22BA209D78B200FF0867 /* ViewController.swift */; };
 		51BE22BE209D78B200FF0867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22BC209D78B200FF0867 /* Main.storyboard */; };
 		51BE22C0209D78B200FF0867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22BF209D78B200FF0867 /* Assets.xcassets */; };
 		51BE22C3209D78B200FF0867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22C1209D78B200FF0867 /* LaunchScreen.storyboard */; };
@@ -34,6 +33,10 @@
 		51BE22F7209D7DE800FF0867 /* ParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22F3209D7DE700FF0867 /* ParkList.swift */; };
 		51BE22F8209D7DE800FF0867 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22F5209D7DE700FF0867 /* Park.swift */; };
 		51BE22F9209D7DE800FF0867 /* GetParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22F6209D7DE800FF0867 /* GetParkList.swift */; };
+		51BE22FB209D7F6D00FF0867 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22FA209D7F6D00FF0867 /* MainViewController.swift */; };
+		51BE2300209D7FF400FF0867 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22FF209D7FF400FF0867 /* FavoritesViewController.swift */; };
+		51BE2302209D7FFF00FF0867 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE2301209D7FFF00FF0867 /* MapViewController.swift */; };
+		51BE2304209D800C00FF0867 /* ParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE2303209D800C00FF0867 /* ParkListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +44,6 @@
 		40F92D569DE3E66A3BF82686 /* Pods-AutoPass-MVC-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPass-MVC-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoPass-MVC-Assignment/Pods-AutoPass-MVC-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		51BE22B5209D78B200FF0867 /* AutoPass-MVC-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AutoPass-MVC-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BE22B8209D78B200FF0867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		51BE22BA209D78B200FF0867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51BE22BD209D78B200FF0867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51BE22BF209D78B200FF0867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51BE22C2209D78B200FF0867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +69,10 @@
 		51BE22F3209D7DE700FF0867 /* ParkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkList.swift; sourceTree = "<group>"; };
 		51BE22F5209D7DE700FF0867 /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		51BE22F6209D7DE800FF0867 /* GetParkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParkList.swift; sourceTree = "<group>"; };
+		51BE22FA209D7F6D00FF0867 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		51BE22FF209D7FF400FF0867 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		51BE2301209D7FFF00FF0867 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		51BE2303209D800C00FF0867 /* ParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkListViewController.swift; sourceTree = "<group>"; };
 		BC66A3065A9E3D2ED130D70E /* Pods_AutoPass_MVC_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoPass_MVC_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,8 +115,10 @@
 				51BE22D9209D7A3400FF0867 /* Networking */,
 				51BE22DD209D7A3400FF0867 /* Realm */,
 				51BE22B8209D78B200FF0867 /* AppDelegate.swift */,
-				51BE22BA209D78B200FF0867 /* ViewController.swift */,
-				51BE22F6209D7DE800FF0867 /* GetParkList.swift */,
+				51BE22FA209D7F6D00FF0867 /* MainViewController.swift */,
+				51BE22FE209D7FCD00FF0867 /* FavoritesView */,
+				51BE22FD209D7FC500FF0867 /* MapView */,
+				51BE22FC209D7FB200FF0867 /* ParkListView */,
 				51BE22F4209D7DE700FF0867 /* Model */,
 				51BE22BC209D78B200FF0867 /* Main.storyboard */,
 				51BE22BF209D78B200FF0867 /* Assets.xcassets */,
@@ -180,6 +188,31 @@
 				51BE22F5209D7DE700FF0867 /* Park.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		51BE22FC209D7FB200FF0867 /* ParkListView */ = {
+			isa = PBXGroup;
+			children = (
+				51BE2303209D800C00FF0867 /* ParkListViewController.swift */,
+				51BE22F6209D7DE800FF0867 /* GetParkList.swift */,
+			);
+			path = ParkListView;
+			sourceTree = "<group>";
+		};
+		51BE22FD209D7FC500FF0867 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				51BE2301209D7FFF00FF0867 /* MapViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		51BE22FE209D7FCD00FF0867 /* FavoritesView */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22FF209D7FF400FF0867 /* FavoritesViewController.swift */,
+			);
+			path = FavoritesView;
 			sourceTree = "<group>";
 		};
 		71A8C6A23E0909D42CF46D11 /* Frameworks */ = {
@@ -344,7 +377,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51BE22BB209D78B200FF0867 /* ViewController.swift in Sources */,
 				51BE22EC209D7A3400FF0867 /* Navigable.swift in Sources */,
 				51BE22E6209D7A3400FF0867 /* SwiftyJSONExtension.swift in Sources */,
 				51BE22E9209D7A3400FF0867 /* UIViewExtension.swift in Sources */,
@@ -353,15 +385,19 @@
 				51BE22E2209D7A3400FF0867 /* CGFloat+Int+UIView.swift in Sources */,
 				51BE22F8209D7DE800FF0867 /* Park.swift in Sources */,
 				51BE22ED209D7A3400FF0867 /* JSONDecodable.swift in Sources */,
+				51BE2302209D7FFF00FF0867 /* MapViewController.swift in Sources */,
 				51BE22EE209D7A3400FF0867 /* NetworkClient.swift in Sources */,
 				51BE22F9209D7DE800FF0867 /* GetParkList.swift in Sources */,
+				51BE2300209D7FF400FF0867 /* FavoritesViewController.swift in Sources */,
 				51BE22F2209D7A3400FF0867 /* RealmObject.swift in Sources */,
 				51BE22F0209D7A3400FF0867 /* RealmError.swift in Sources */,
 				51BE22EB209D7A3400FF0867 /* ColorgyNavigationTransitioningDelegate.swift in Sources */,
 				51BE22EA209D7A3400FF0867 /* ColorgyNavigationBar.swift in Sources */,
+				51BE22FB209D7F6D00FF0867 /* MainViewController.swift in Sources */,
 				51BE22F1209D7A3400FF0867 /* RealmManager.swift in Sources */,
 				51BE22E4209D7A3400FF0867 /* NumberExtension.swift in Sources */,
 				51BE22E1209D7A3400FF0867 /* Queue.swift in Sources */,
+				51BE2304209D800C00FF0867 /* ParkListViewController.swift in Sources */,
 				51BE22E5209D7A3400FF0867 /* Sequence+GroupBy.swift in Sources */,
 				51BE22E7209D7A3400FF0867 /* UITableViewExtension.swift in Sources */,
 				51BE22E3209D7A3400FF0867 /* CustomColor.swift in Sources */,
