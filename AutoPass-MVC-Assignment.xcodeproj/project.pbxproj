@@ -12,6 +12,24 @@
 		51BE22BE209D78B200FF0867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22BC209D78B200FF0867 /* Main.storyboard */; };
 		51BE22C0209D78B200FF0867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22BF209D78B200FF0867 /* Assets.xcassets */; };
 		51BE22C3209D78B200FF0867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22C1209D78B200FF0867 /* LaunchScreen.storyboard */; };
+		51BE22E1209D7A3400FF0867 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22CB209D7A3300FF0867 /* Queue.swift */; };
+		51BE22E2209D7A3400FF0867 /* CGFloat+Int+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22CD209D7A3300FF0867 /* CGFloat+Int+UIView.swift */; };
+		51BE22E3209D7A3400FF0867 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22CE209D7A3300FF0867 /* CustomColor.swift */; };
+		51BE22E4209D7A3400FF0867 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22CF209D7A3300FF0867 /* NumberExtension.swift */; };
+		51BE22E5209D7A3400FF0867 /* Sequence+GroupBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D0209D7A3300FF0867 /* Sequence+GroupBy.swift */; };
+		51BE22E6209D7A3400FF0867 /* SwiftyJSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D1209D7A3300FF0867 /* SwiftyJSONExtension.swift */; };
+		51BE22E7209D7A3400FF0867 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D2209D7A3300FF0867 /* UITableViewExtension.swift */; };
+		51BE22E8209D7A3400FF0867 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D3209D7A3300FF0867 /* UIViewControllerExtension.swift */; };
+		51BE22E9209D7A3400FF0867 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D4209D7A3300FF0867 /* UIViewExtension.swift */; };
+		51BE22EA209D7A3400FF0867 /* ColorgyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D6209D7A3300FF0867 /* ColorgyNavigationBar.swift */; };
+		51BE22EB209D7A3400FF0867 /* ColorgyNavigationTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D7209D7A3300FF0867 /* ColorgyNavigationTransitioningDelegate.swift */; };
+		51BE22EC209D7A3400FF0867 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22D8209D7A3300FF0867 /* Navigable.swift */; };
+		51BE22ED209D7A3400FF0867 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DA209D7A3400FF0867 /* JSONDecodable.swift */; };
+		51BE22EE209D7A3400FF0867 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DB209D7A3400FF0867 /* NetworkClient.swift */; };
+		51BE22EF209D7A3400FF0867 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DC209D7A3400FF0867 /* NetworkRequest.swift */; };
+		51BE22F0209D7A3400FF0867 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DE209D7A3400FF0867 /* RealmError.swift */; };
+		51BE22F1209D7A3400FF0867 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22DF209D7A3400FF0867 /* RealmManager.swift */; };
+		51BE22F2209D7A3400FF0867 /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22E0209D7A3400FF0867 /* RealmObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +40,24 @@
 		51BE22BF209D78B200FF0867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51BE22C2209D78B200FF0867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51BE22C4209D78B200FF0867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51BE22CB209D7A3300FF0867 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		51BE22CD209D7A3300FF0867 /* CGFloat+Int+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Int+UIView.swift"; sourceTree = "<group>"; };
+		51BE22CE209D7A3300FF0867 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		51BE22CF209D7A3300FF0867 /* NumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
+		51BE22D0209D7A3300FF0867 /* Sequence+GroupBy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+GroupBy.swift"; sourceTree = "<group>"; };
+		51BE22D1209D7A3300FF0867 /* SwiftyJSONExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONExtension.swift; sourceTree = "<group>"; };
+		51BE22D2209D7A3300FF0867 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		51BE22D3209D7A3300FF0867 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		51BE22D4209D7A3300FF0867 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		51BE22D6209D7A3300FF0867 /* ColorgyNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorgyNavigationBar.swift; sourceTree = "<group>"; };
+		51BE22D7209D7A3300FF0867 /* ColorgyNavigationTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorgyNavigationTransitioningDelegate.swift; sourceTree = "<group>"; };
+		51BE22D8209D7A3300FF0867 /* Navigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
+		51BE22DA209D7A3400FF0867 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		51BE22DB209D7A3400FF0867 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		51BE22DC209D7A3400FF0867 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		51BE22DE209D7A3400FF0867 /* RealmError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
+		51BE22DF209D7A3400FF0867 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		51BE22E0209D7A3400FF0867 /* RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +90,11 @@
 		51BE22B7209D78B200FF0867 /* AutoPass-MVC-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				51BE22CC209D7A3300FF0867 /* Extensions */,
+				51BE22CA209D7A3300FF0867 /* Helper */,
+				51BE22D5209D7A3300FF0867 /* Navigation */,
+				51BE22D9209D7A3400FF0867 /* Networking */,
+				51BE22DD209D7A3400FF0867 /* Realm */,
 				51BE22B8209D78B200FF0867 /* AppDelegate.swift */,
 				51BE22BA209D78B200FF0867 /* ViewController.swift */,
 				51BE22BC209D78B200FF0867 /* Main.storyboard */,
@@ -62,6 +103,59 @@
 				51BE22C4209D78B200FF0867 /* Info.plist */,
 			);
 			path = "AutoPass-MVC-Assignment";
+			sourceTree = "<group>";
+		};
+		51BE22CA209D7A3300FF0867 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22CB209D7A3300FF0867 /* Queue.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		51BE22CC209D7A3300FF0867 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22CD209D7A3300FF0867 /* CGFloat+Int+UIView.swift */,
+				51BE22CE209D7A3300FF0867 /* CustomColor.swift */,
+				51BE22CF209D7A3300FF0867 /* NumberExtension.swift */,
+				51BE22D0209D7A3300FF0867 /* Sequence+GroupBy.swift */,
+				51BE22D1209D7A3300FF0867 /* SwiftyJSONExtension.swift */,
+				51BE22D2209D7A3300FF0867 /* UITableViewExtension.swift */,
+				51BE22D3209D7A3300FF0867 /* UIViewControllerExtension.swift */,
+				51BE22D4209D7A3300FF0867 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		51BE22D5209D7A3300FF0867 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22D6209D7A3300FF0867 /* ColorgyNavigationBar.swift */,
+				51BE22D7209D7A3300FF0867 /* ColorgyNavigationTransitioningDelegate.swift */,
+				51BE22D8209D7A3300FF0867 /* Navigable.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		51BE22D9209D7A3400FF0867 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22DA209D7A3400FF0867 /* JSONDecodable.swift */,
+				51BE22DB209D7A3400FF0867 /* NetworkClient.swift */,
+				51BE22DC209D7A3400FF0867 /* NetworkRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		51BE22DD209D7A3400FF0867 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				51BE22DE209D7A3400FF0867 /* RealmError.swift */,
+				51BE22DF209D7A3400FF0867 /* RealmManager.swift */,
+				51BE22E0209D7A3400FF0867 /* RealmObject.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +231,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BE22BB209D78B200FF0867 /* ViewController.swift in Sources */,
+				51BE22EC209D7A3400FF0867 /* Navigable.swift in Sources */,
+				51BE22E6209D7A3400FF0867 /* SwiftyJSONExtension.swift in Sources */,
+				51BE22E9209D7A3400FF0867 /* UIViewExtension.swift in Sources */,
+				51BE22E8209D7A3400FF0867 /* UIViewControllerExtension.swift in Sources */,
+				51BE22E2209D7A3400FF0867 /* CGFloat+Int+UIView.swift in Sources */,
+				51BE22ED209D7A3400FF0867 /* JSONDecodable.swift in Sources */,
+				51BE22EE209D7A3400FF0867 /* NetworkClient.swift in Sources */,
+				51BE22F2209D7A3400FF0867 /* RealmObject.swift in Sources */,
+				51BE22F0209D7A3400FF0867 /* RealmError.swift in Sources */,
+				51BE22EB209D7A3400FF0867 /* ColorgyNavigationTransitioningDelegate.swift in Sources */,
+				51BE22EA209D7A3400FF0867 /* ColorgyNavigationBar.swift in Sources */,
+				51BE22F1209D7A3400FF0867 /* RealmManager.swift in Sources */,
+				51BE22E4209D7A3400FF0867 /* NumberExtension.swift in Sources */,
+				51BE22E1209D7A3400FF0867 /* Queue.swift in Sources */,
+				51BE22E5209D7A3400FF0867 /* Sequence+GroupBy.swift in Sources */,
+				51BE22E7209D7A3400FF0867 /* UITableViewExtension.swift in Sources */,
+				51BE22E3209D7A3400FF0867 /* CustomColor.swift in Sources */,
 				51BE22B9209D78B200FF0867 /* AppDelegate.swift in Sources */,
+				51BE22EF209D7A3400FF0867 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
