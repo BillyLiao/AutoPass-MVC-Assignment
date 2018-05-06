@@ -24,12 +24,12 @@ internal final class RelatedSpotView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configure(with parks: [Park]) {
-        guard parks.count != 0 else { return }
+    public func configure(with spots: [ParkSpot]) {
+        guard spots.count != 0 else { return }
         
-        for (index, park) in parks.enumerated() {
+        for (index, spot) in spots.enumerated() {
             let simpleSpotView = SimpleSpotView()
-            simpleSpotView.configure(with: park)
+            simpleSpotView.configure(with: spot)
             simpleSpotView.frame.origin.x = (simpleSpotView.frame.width + 5) * index.cgFloat
             
             addSubview(simpleSpotView)

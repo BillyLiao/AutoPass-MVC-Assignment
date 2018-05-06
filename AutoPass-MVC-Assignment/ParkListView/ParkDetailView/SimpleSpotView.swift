@@ -56,10 +56,10 @@ internal final class SimpleSpotView: UIView {
         addSubview(nameLabel)
     }
     
-    public func configure(with park: Park) {
-        imageView.sd_setImage(with: park.imageURL, placeholderImage: #imageLiteral(resourceName: "defaultImage"))
+    public func configure(with spot: ParkSpot) {
+        imageView.sd_setImage(with: spot.imageURL, placeholderImage: #imageLiteral(resourceName: "DefaultImage"))
         
-        nameLabel.text = park.parkName
+        nameLabel.text = spot.parkName
         nameLabel.sizeToFit()
         nameLabel.center.y = imageView.frame.maxY + (frame.maxY - imageView.frame.maxY)/2
     }
