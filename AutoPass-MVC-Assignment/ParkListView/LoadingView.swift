@@ -17,7 +17,7 @@ final class LoadingView: UIView {
         super.init(frame: frame)
         
         addSubview(spinner)
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
     }
     
     required init?(coder aDecoder: NSCoder) {
