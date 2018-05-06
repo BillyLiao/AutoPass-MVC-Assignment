@@ -12,7 +12,7 @@ internal final class MainViewController: UITabBarController {
 
     // MARK: - View Controllers
     let vcs: [UIViewController] = [
-        ParkListViewController(),
+        ParkListViewController(parksHandler: ParksManager(networkRequest: GetParkList())),
         MapViewController(),
         FavoritesViewController()
     ]
