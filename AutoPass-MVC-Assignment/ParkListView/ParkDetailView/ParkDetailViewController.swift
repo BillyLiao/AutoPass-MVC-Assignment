@@ -50,6 +50,7 @@ final class ParkDetailViewController: UIViewController, Navigable {
         parkDetailManager.delegate = parkDetailUIController
         
         detailView.configure(with: park)
+        parkDetailManager.loadData()
     }
 
     override func didReceiveMemoryWarning() {

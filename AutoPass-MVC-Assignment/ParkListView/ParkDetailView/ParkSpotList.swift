@@ -15,7 +15,6 @@ public struct ParkSpotList: JSONDecodable {
     let items: [ParkSpot]
     
     public init(decodeUsing json: JSON) throws {
-        print(json)
         let result = json["result"]
         guard
             let offset = result["offset"].int,
