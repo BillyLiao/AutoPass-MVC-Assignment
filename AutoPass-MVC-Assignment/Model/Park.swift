@@ -13,27 +13,32 @@ public struct Park: JSONDecodable {
     
     let id: String
     let parkName: String
-    let name: String
     let openTime: String
     let imageURL: URL
     let intro: String
+    let coordinate: (longitude: Float, latitude: Float)
+    let adminArea: String
 
     public init(decodeUsing json: JSON) throws {
         guard
-            let id = json["_id"].string,
+            let id = json["_id"].int,
             let parkName = json["ParkName"].string,
-            let name = json["Name"].string,
-            let openTime = json["OpenTime"].string,
             let imageURLString = json["Image"].string,
             let imageURL = URL(string: imageURLString),
-            let intro = json["Introduction"].string
+            let intro = json["Introduction"].string,
+            let longitudeString = json["Longitude"].string,
+            let longitude = Float(longitudeString),
+            let latitudeString = json["Latitude"].string,
+            let latitude = Float(latitudeString),
+            let adminArea = json["AdministrativeArea"].string
         else { throw JSONDecodableError.parseError }
     
-        self.id = id
+        self.id = "\(id)"
         self.parkName = parkName
-        self.name = name
-        self.openTime = openTime
+        self.openTime = json["OpenTime"].string ?? ""
         self.imageURL = imageURL
         self.intro = intro
+        self.coordinate = (longitude, latitude)
+        self.adminArea = adminArea
     }
 }
