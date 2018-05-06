@@ -43,7 +43,6 @@ final class ParkDetailView: UIScrollView {
         mainImageView.sd_setImage(with: park.imageURL, placeholderImage: #imageLiteral(resourceName: "DefaultImage"))
         infoView.configure(with: park)
         introLabel.text = park.intro
-        relatedSpotView.showBlueBorder()
     }
     
     override func layoutSubviews() {
@@ -73,7 +72,7 @@ final class ParkDetailView: UIScrollView {
         
         relatedSpotView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(150)
             make.top.equalTo(introLabel.snp.bottom).offset(12)
         }
         

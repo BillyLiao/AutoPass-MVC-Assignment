@@ -15,7 +15,7 @@ internal final class SimpleSpotView: UIView {
     
     // MARK: - Init
     public convenience init() {
-        self.init(frame: CGRect(x: 0, y: 0, width: 195, height: 90))
+        self.init(frame: CGRect(x: 0, y: 0, width: 195, height: 120))
 
         backgroundColor = UIColor.white
 
@@ -38,7 +38,7 @@ internal final class SimpleSpotView: UIView {
     
     // MARK: - View Configuration
     private func configureImageView() {
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 195, height: 65))
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 195, height: 95))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
@@ -59,7 +59,7 @@ internal final class SimpleSpotView: UIView {
     public func configure(with spot: ParkSpot) {
         imageView.sd_setImage(with: spot.imageURL, placeholderImage: #imageLiteral(resourceName: "DefaultImage"))
         
-        nameLabel.text = spot.parkName
+        nameLabel.text = spot.name
         nameLabel.sizeToFit()
         nameLabel.center.y = imageView.frame.maxY + (frame.maxY - imageView.frame.maxY)/2
     }
