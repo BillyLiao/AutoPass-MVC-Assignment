@@ -41,7 +41,7 @@ internal final class ParkListViewController: UIViewController, Navigable {
         parkListUIController = ParkListUIController(view: view, tableView: tableView)
         parksHandler.delegate = parkListUIController
         
-        parksHandler.loadData()
+        parksHandler.loadData(page: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,9 +60,19 @@ internal final class ParkListViewController: UIViewController, Navigable {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
+        tableView.delegate = self
         tableView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(navigationBar.snp.bottom)
         }
     }
 }
+
+extension ParkListViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row+1) == tableView.numberOfRows(inSection: indexPath.section)-5 {
+            parksHandler.loadData(page: (indexPath.row+1)/10)
+        }
+    }
+}
+

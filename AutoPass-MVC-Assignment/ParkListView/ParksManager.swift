@@ -20,7 +20,7 @@ protocol ParksDelegate {
 
 protocol ParksHandler: class {
     var delegate: ParksDelegate? { get set }
-    func loadData()
+    func loadData(page: Int)
 }
 
 final class ParksManager: ParksHandler {
@@ -31,11 +31,11 @@ final class ParksManager: ParksHandler {
         self.networkRequest = networkRequest
     }
     
-    func loadData() {
+    func loadData(page: Int = 0) {
         guard let _ = self.delegate else { fatalError("Delegate needed") }
         
         delegate?.state = .Loading
-        networkRequest.perform().then { [weak self] (list) in
+        networkRequest.perform(offset: page).then { [weak self] (list) in
             self?.delegate?.state = .Success(list.items)
         }.catch { (e) in
             print(e)

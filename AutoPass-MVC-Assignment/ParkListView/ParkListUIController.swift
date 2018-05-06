@@ -25,7 +25,6 @@ final class ParkListUIController {
         self.view = view
         self.loadingView = LoadingView.init(frame: CGRect.init(origin: .zero, size: tableView.frame.size))
         self.tableViewDataSource = TableViewDataSource<ParkCellConfigurator, ParkCell>(tableView: tableView)
-        
         tableView.dataSource = tableViewDataSource
         update(state)
     }
@@ -33,11 +32,11 @@ final class ParkListUIController {
 
 extension ParkListUIController: ParksDelegate {
     func update(_ newState: UIState<DataType>) {
-        
         switch(state, newState) {
             
         case (.Loading, .Loading): loadingToLoading()
         case (.Loading, .Success(let parks)): loadingToSuccess(parks)
+         case (.Success, .Loading): loadingToLoading()
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -50,6 +49,11 @@ extension ParkListUIController: ParksDelegate {
     
     func loadingToSuccess(_ parks: [DataType]) {
         loadingView.removeFromSuperview()
-        tableViewDataSource.dataSource = parks.map(ParkCellConfigurator.init)
+        tableViewDataSource.dataSource.append(contentsOf: parks.map(ParkCellConfigurator.init))
     }
 }
+
+//extension ParkListViewController: UITableViewDataSourcePrefetching {
+//
+//}
+
