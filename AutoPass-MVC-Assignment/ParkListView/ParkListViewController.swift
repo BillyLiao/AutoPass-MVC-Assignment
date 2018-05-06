@@ -74,5 +74,12 @@ extension ParkListViewController: UITableViewDelegate {
             parksHandler.loadData(page: (indexPath.row+1)/10)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let park = parksHandler.parks[indexPath.row]
+        let vc = ParkDetailViewController(park: park, parkDetailManager: ParkDetailManager(networkRequest: GetParkDetail(), parkName: park.parkName))
+        navigationTransitionDelegate?.presentingViewController = vc
+        self.asyncPresent(vc, animated: true)
+    }
 }
 
