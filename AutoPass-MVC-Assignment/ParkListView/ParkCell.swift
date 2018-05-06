@@ -35,6 +35,8 @@ final class ParkCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.selectionStyle = .none
+        
         mainImageView.layer.cornerRadius = mainImageView.frame.width/2
         mainImageView.clipsToBounds = true
         starButton.setTitle("Favorite", for: .normal)
