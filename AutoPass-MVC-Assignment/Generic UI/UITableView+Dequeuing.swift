@@ -19,7 +19,7 @@ extension Reusable {
 
 extension UITableView {
     func registerReusableCell<T: UITableViewCell>(_ :T.Type) where T: Reusable {
-        register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
+        register(UINib(nibName: "\(T.self)", bundle: nil), forCellReuseIdentifier: T.reuseIdentifier)
     }
     
     func dequeueReusableCell<T: UITableViewCell>(indexPath indexPath: IndexPath) -> T where T: Reusable {
