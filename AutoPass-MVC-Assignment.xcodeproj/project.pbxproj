@@ -10,6 +10,14 @@
 		49BB131568FBDF4BDE56D8D8 /* Pods_AutoPass_MVC_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A3065A9E3D2ED130D70E /* Pods_AutoPass_MVC_Assignment.framework */; };
 		514B958A209DD6A3000B8D00 /* ParkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9588209DD6A3000B8D00 /* ParkCell.swift */; };
 		514B958B209DD6A3000B8D00 /* ParkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 514B9589209DD6A3000B8D00 /* ParkCell.xib */; };
+		514B958E209ED345000B8D00 /* ParkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B958D209ED345000B8D00 /* ParkDetailViewController.swift */; };
+		514B9591209ED3A3000B8D00 /* RelatedSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B958F209ED3A3000B8D00 /* RelatedSpotView.swift */; };
+		514B9592209ED3A3000B8D00 /* SimpleSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9590209ED3A3000B8D00 /* SimpleSpotView.swift */; };
+		514B9594209ED3F7000B8D00 /* ParkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9593209ED3F7000B8D00 /* ParkDetailView.swift */; };
+		514B9596209ED40F000B8D00 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9595209ED40F000B8D00 /* SpotDetailView.swift */; };
+		514B9598209ED5A2000B8D00 /* ParkBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9597209ED5A2000B8D00 /* ParkBasicInfoView.swift */; };
+		514B959A209EE721000B8D00 /* GetParkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9599209EE721000B8D00 /* GetParkDetail.swift */; };
+		514B959C209EE7C6000B8D00 /* ParkDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B959B209EE7C6000B8D00 /* ParkDetailManager.swift */; };
 		51A6B74D209DA0580096D983 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B74C209DA0580096D983 /* CellConfigurable.swift */; };
 		51A6B74F209DA06B0096D983 /* UITableView+Dequeuing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B74E209DA06B0096D983 /* UITableView+Dequeuing.swift */; };
 		51A6B751209DA3740096D983 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B750209DA3740096D983 /* TableViewDataSource.swift */; };
@@ -17,6 +25,9 @@
 		51A6B755209DA5880096D983 /* ParkCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B754209DA5880096D983 /* ParkCellConfigurator.swift */; };
 		51A6B75B209DB5410096D983 /* ParkListUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B75A209DB5410096D983 /* ParkListUIController.swift */; };
 		51A6B75D209DB6880096D983 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B75C209DB6880096D983 /* LoadingView.swift */; };
+		51B5F153209EEBB90021C2E1 /* ParkDetailUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B5F152209EEBB90021C2E1 /* ParkDetailUIController.swift */; };
+		51B5F155209EEFF60021C2E1 /* ParkSpotList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B5F154209EEFF60021C2E1 /* ParkSpotList.swift */; };
+		51B5F157209EF01D0021C2E1 /* ParkSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B5F156209EF01D0021C2E1 /* ParkSpot.swift */; };
 		51BE22B9209D78B200FF0867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22B8209D78B200FF0867 /* AppDelegate.swift */; };
 		51BE22BE209D78B200FF0867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22BC209D78B200FF0867 /* Main.storyboard */; };
 		51BE22C0209D78B200FF0867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BE22BF209D78B200FF0867 /* Assets.xcassets */; };
@@ -52,6 +63,14 @@
 		40F92D569DE3E66A3BF82686 /* Pods-AutoPass-MVC-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPass-MVC-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoPass-MVC-Assignment/Pods-AutoPass-MVC-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		514B9588209DD6A3000B8D00 /* ParkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCell.swift; sourceTree = "<group>"; };
 		514B9589209DD6A3000B8D00 /* ParkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCell.xib; sourceTree = "<group>"; };
+		514B958D209ED345000B8D00 /* ParkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailViewController.swift; sourceTree = "<group>"; };
+		514B958F209ED3A3000B8D00 /* RelatedSpotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelatedSpotView.swift; sourceTree = "<group>"; };
+		514B9590209ED3A3000B8D00 /* SimpleSpotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSpotView.swift; sourceTree = "<group>"; };
+		514B9593209ED3F7000B8D00 /* ParkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailView.swift; sourceTree = "<group>"; };
+		514B9595209ED40F000B8D00 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
+		514B9597209ED5A2000B8D00 /* ParkBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkBasicInfoView.swift; sourceTree = "<group>"; };
+		514B9599209EE721000B8D00 /* GetParkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParkDetail.swift; sourceTree = "<group>"; };
+		514B959B209EE7C6000B8D00 /* ParkDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailManager.swift; sourceTree = "<group>"; };
 		51A6B74C209DA0580096D983 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		51A6B74E209DA06B0096D983 /* UITableView+Dequeuing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeuing.swift"; sourceTree = "<group>"; };
 		51A6B750209DA3740096D983 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
@@ -59,6 +78,9 @@
 		51A6B754209DA5880096D983 /* ParkCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCellConfigurator.swift; sourceTree = "<group>"; };
 		51A6B75A209DB5410096D983 /* ParkListUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkListUIController.swift; sourceTree = "<group>"; };
 		51A6B75C209DB6880096D983 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		51B5F152209EEBB90021C2E1 /* ParkDetailUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailUIController.swift; sourceTree = "<group>"; };
+		51B5F154209EEFF60021C2E1 /* ParkSpotList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkSpotList.swift; sourceTree = "<group>"; };
+		51B5F156209EF01D0021C2E1 /* ParkSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkSpot.swift; sourceTree = "<group>"; };
 		51BE22B5209D78B200FF0867 /* AutoPass-MVC-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AutoPass-MVC-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BE22B8209D78B200FF0867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51BE22BD209D78B200FF0867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +126,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		514B958C209ED32F000B8D00 /* ParkDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				514B958D209ED345000B8D00 /* ParkDetailViewController.swift */,
+				514B9593209ED3F7000B8D00 /* ParkDetailView.swift */,
+				514B9597209ED5A2000B8D00 /* ParkBasicInfoView.swift */,
+				514B9595209ED40F000B8D00 /* SpotDetailView.swift */,
+				514B958F209ED3A3000B8D00 /* RelatedSpotView.swift */,
+				514B9590209ED3A3000B8D00 /* SimpleSpotView.swift */,
+				514B9599209EE721000B8D00 /* GetParkDetail.swift */,
+				514B959B209EE7C6000B8D00 /* ParkDetailManager.swift */,
+				51B5F152209EEBB90021C2E1 /* ParkDetailUIController.swift */,
+				51B5F154209EEFF60021C2E1 /* ParkSpotList.swift */,
+				51B5F156209EF01D0021C2E1 /* ParkSpot.swift */,
+			);
+			path = ParkDetailView;
+			sourceTree = "<group>";
+		};
 		51A6B74B209DA0430096D983 /* Generic UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +259,7 @@
 		51BE22FC209D7FB200FF0867 /* ParkListView */ = {
 			isa = PBXGroup;
 			children = (
+				514B958C209ED32F000B8D00 /* ParkDetailView */,
 				51BE2303209D800C00FF0867 /* ParkListViewController.swift */,
 				51A6B752209DA5660096D983 /* ParksManager.swift */,
 				51A6B75A209DB5410096D983 /* ParkListUIController.swift */,
@@ -416,7 +457,10 @@
 				51A6B74D209DA0580096D983 /* CellConfigurable.swift in Sources */,
 				51A6B755209DA5880096D983 /* ParkCellConfigurator.swift in Sources */,
 				51BE22E9209D7A3400FF0867 /* UIViewExtension.swift in Sources */,
+				514B9592209ED3A3000B8D00 /* SimpleSpotView.swift in Sources */,
+				514B959A209EE721000B8D00 /* GetParkDetail.swift in Sources */,
 				51A6B74F209DA06B0096D983 /* UITableView+Dequeuing.swift in Sources */,
+				514B9591209ED3A3000B8D00 /* RelatedSpotView.swift in Sources */,
 				51BE22F7209D7DE800FF0867 /* ParkList.swift in Sources */,
 				51BE22E8209D7A3400FF0867 /* UIViewControllerExtension.swift in Sources */,
 				51BE22E2209D7A3400FF0867 /* CGFloat+Int+UIView.swift in Sources */,
@@ -429,16 +473,24 @@
 				51BE2300209D7FF400FF0867 /* FavoritesViewController.swift in Sources */,
 				51BE22F2209D7A3400FF0867 /* RealmObject.swift in Sources */,
 				51BE22F0209D7A3400FF0867 /* RealmError.swift in Sources */,
+				514B9598209ED5A2000B8D00 /* ParkBasicInfoView.swift in Sources */,
 				51BE22EB209D7A3400FF0867 /* ColorgyNavigationTransitioningDelegate.swift in Sources */,
 				51BE22EA209D7A3400FF0867 /* ColorgyNavigationBar.swift in Sources */,
 				51BE22FB209D7F6D00FF0867 /* MainViewController.swift in Sources */,
+				51B5F153209EEBB90021C2E1 /* ParkDetailUIController.swift in Sources */,
 				51BE22F1209D7A3400FF0867 /* RealmManager.swift in Sources */,
+				514B959C209EE7C6000B8D00 /* ParkDetailManager.swift in Sources */,
+				51B5F155209EEFF60021C2E1 /* ParkSpotList.swift in Sources */,
 				514B958A209DD6A3000B8D00 /* ParkCell.swift in Sources */,
 				51BE22E4209D7A3400FF0867 /* NumberExtension.swift in Sources */,
 				51BE22E1209D7A3400FF0867 /* Queue.swift in Sources */,
+				51B5F157209EF01D0021C2E1 /* ParkSpot.swift in Sources */,
 				51BE2304209D800C00FF0867 /* ParkListViewController.swift in Sources */,
 				51BE22E5209D7A3400FF0867 /* Sequence+GroupBy.swift in Sources */,
+				514B9594209ED3F7000B8D00 /* ParkDetailView.swift in Sources */,
+				514B9596209ED40F000B8D00 /* SpotDetailView.swift in Sources */,
 				51BE22E3209D7A3400FF0867 /* CustomColor.swift in Sources */,
+				514B958E209ED345000B8D00 /* ParkDetailViewController.swift in Sources */,
 				51BE22B9209D78B200FF0867 /* AppDelegate.swift in Sources */,
 				51BE22EF209D7A3400FF0867 /* NetworkRequest.swift in Sources */,
 				51A6B751209DA3740096D983 /* TableViewDataSource.swift in Sources */,

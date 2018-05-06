@@ -36,7 +36,7 @@ extension ParkListUIController: ParksDelegate {
             
         case (.Loading, .Loading): loadingToLoading()
         case (.Loading, .Success(let parks)): loadingToSuccess(parks)
-         case (.Success, .Loading): loadingToLoading()
+        case (.Success, .Loading): loadingToLoading()
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -52,8 +52,3 @@ extension ParkListUIController: ParksDelegate {
         tableViewDataSource.dataSource.append(contentsOf: parks.map(ParkCellConfigurator.init))
     }
 }
-
-//extension ParkListViewController: UITableViewDataSourcePrefetching {
-//
-//}
-
