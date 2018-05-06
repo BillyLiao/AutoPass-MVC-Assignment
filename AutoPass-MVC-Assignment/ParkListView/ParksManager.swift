@@ -37,6 +37,8 @@ final class ParksManager: ParksHandler {
         delegate?.state = .Loading
         networkRequest.perform().then { [weak self] (list) in
             self?.delegate?.state = .Success(list.items)
+        }.catch { (e) in
+            print(e)
         }
     }
 }

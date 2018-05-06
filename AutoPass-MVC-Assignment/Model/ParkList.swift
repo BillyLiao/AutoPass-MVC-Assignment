@@ -18,7 +18,6 @@ public struct ParkList: JSONDecodable {
     
     public init(decodeUsing json: JSON) throws {
         let result = json["result"]
-        
         guard
             let offset = result["offset"].int,
             let limit = result["limit"].int,
