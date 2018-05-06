@@ -18,6 +18,8 @@ public struct Park: JSONDecodable {
     let intro: String
     let coordinate: (longitude: Float, latitude: Float)
     let adminArea: String
+    let location: String
+    let type: String
 
     public init(decodeUsing json: JSON) throws {
         guard
@@ -30,7 +32,9 @@ public struct Park: JSONDecodable {
             let longitude = Float(longitudeString),
             let latitudeString = json["Latitude"].string,
             let latitude = Float(latitudeString),
-            let adminArea = json["AdministrativeArea"].string
+            let adminArea = json["AdministrativeArea"].string,
+            let location = json["Location"].string,
+            let type = json["ParkType"].string
         else { throw JSONDecodableError.parseError }
     
         self.id = "\(id)"
@@ -40,5 +44,7 @@ public struct Park: JSONDecodable {
         self.intro = intro
         self.coordinate = (longitude, latitude)
         self.adminArea = adminArea
+        self.location = location
+        self.type = type
     }
 }
