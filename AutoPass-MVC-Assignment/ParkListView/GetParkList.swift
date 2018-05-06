@@ -14,10 +14,13 @@ import SwiftyJSON
 public class GetParkList : NetworkRequest {
     public typealias ResponseType = ParkList
     
-    public var endpoint: String { return "/apiAccess?scope=resourceAquire&rid=bf073841-c734-49bf-a97f-3757a6013812" }
+    public var endpoint: String { return "" }
     public var method: HTTPMethod { return .get }
+    public var encoding: ParameterEncoding { return URLEncoding.default }
+    public var parameters: [String : Any]? { return ["id": "a132516d-d2f3-4e23-866e-27e616b3855a", "rid": "8f6fcb24-290b-461d-9d34-72ed1b3f51f0", "limit": 15, "offset": offset, "scope": "resourceAquire"]}
     
-    public func perform() -> Promise<ResponseType> {
+    private var offset: Int = 0
+    public func perform(offset: Int = 0) -> Promise<ResponseType> {
         return networkClient.performRequest(self).then(execute: responseHandler)
     }
 }
