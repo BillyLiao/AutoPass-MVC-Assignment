@@ -13,10 +13,22 @@ internal final class ParkListViewController: UIViewController, Navigable {
     
     // MARK: - View Components
     var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
-    let tableView: UITableView = UITableView()
+    private let parksHandler: ParksHandler
+    private var parkListUIController: ParkListUIController!
+    private let tableView: UITableView = UITableView()
     
     // MARK: - Transitioning Delegate
     var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
+    
+    init(parksHandler: ParksHandler) {
+        
+        self.parksHandler = parksHandler
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +37,11 @@ internal final class ParkListViewController: UIViewController, Navigable {
         
         configureNavigationBar()
         configureTableView()
+        
+        parkListUIController = ParkListUIController(view: view, tableView: tableView)
+        parksHandler.delegate = parkListUIController
+        
+        parksHandler.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,9 +57,11 @@ internal final class ParkListViewController: UIViewController, Navigable {
     
     private func configureTableView() {
         view.addSubview(tableView)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
+            make.left.right.bottom.equalToSuperview()
             make.top.equalTo(navigationBar.snp.bottom)
         }
     }
