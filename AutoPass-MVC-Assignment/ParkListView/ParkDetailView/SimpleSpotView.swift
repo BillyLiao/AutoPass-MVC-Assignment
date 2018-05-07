@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol SimpleSpotViewDelegate: class {
+    func simpleSpotViewDidTapped(_ spotView: SimpleSpotView)
+}
+
 internal final class SimpleSpotView: UIView {
 
-    private var imageView: UIImageView!
-    private var nameLabel: UILabel!
+    let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 195, height: 95))
+    let nameLabel: UILabel = UILabel(frame: CGRect(x: 8, y: 0, width: 0, height: 0))
+    
+    weak var delegate: SimpleSpotViewDelegate?
     
     // MARK: - Init
     public convenience init() {
@@ -23,6 +29,10 @@ internal final class SimpleSpotView: UIView {
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.lightGray.cgColor
         clipsToBounds = true
+        
+        isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(tapGesture)
         
         configureImageView()
         configureNameLabel()
@@ -38,7 +48,6 @@ internal final class SimpleSpotView: UIView {
     
     // MARK: - View Configuration
     private func configureImageView() {
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 195, height: 95))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
@@ -46,7 +55,6 @@ internal final class SimpleSpotView: UIView {
     }
     
     private func configureNameLabel() {
-        nameLabel = UILabel(frame: CGRect(x: 8, y: 0, width: 0, height: 0))
         nameLabel.font = UIFont.systemFont(ofSize: 12)
         nameLabel.textColor = UIColor.darkText
         nameLabel.textAlignment = .left
@@ -62,5 +70,9 @@ internal final class SimpleSpotView: UIView {
         nameLabel.text = spot.name
         nameLabel.sizeToFit()
         nameLabel.center.y = imageView.frame.maxY + (frame.maxY - imageView.frame.maxY)/2
+    }
+    
+    @objc func tapped() {
+        self.delegate?.simpleSpotViewDidTapped(self)
     }
 }
