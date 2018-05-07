@@ -21,16 +21,22 @@ protocol ParksDelegate {
 protocol ParksHandler: class {
     var delegate: ParksDelegate? { get set }
     var parks: [Park] { get set }
+    var realmManager: RealmManager<FavoritesParkTable> { get set }
+
     func loadData(page: Int)
+    func parkStarredStateChanged(index: Int, to: Bool)
 }
 
 final class ParksManager: ParksHandler {
-    private let networkRequest: GetParkList
     var delegate: ParksDelegate?
+
+    let networkRequest: GetParkList
     var parks: [Park] = []
-    
-    init(networkRequest: GetParkList) {
+    var realmManager: RealmManager<FavoritesParkTable>
+
+    init(_ networkRequest: GetParkList, realmManager: RealmManager<FavoritesParkTable>) {
         self.networkRequest = networkRequest
+        self.realmManager = realmManager
     }
     
     func loadData(page: Int = 0) {
@@ -43,6 +49,18 @@ final class ParksManager: ParksHandler {
             return
         }.catch { (e) in
             print(e)
+        }
+    }
+    
+    func parkStarredStateChanged(index: Int, to: Bool) {
+        let id = parks[index].id
+        
+        if to == true {
+            let realmObject = FavoritesParkTable()
+            realmObject.id = id
+            try? realmManager.add(object: realmObject, completionHandler: nil)
+        }else {
+            try? realmManager.remove(id: id, completionHandler: nil)
         }
     }
 }
