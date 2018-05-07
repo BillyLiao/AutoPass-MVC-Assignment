@@ -27,6 +27,9 @@ final class ParkDetailView: UIScrollView {
         addSubview(contentView)
         contentView.addSubview(mainImageView)
         contentView.addSubview(infoView)
+        introLabel.font = UIFont.systemFont(ofSize: 16)
+        introLabel.textColor = UIColor.lightGray
+        introLabel.numberOfLines = 0
         contentView.addSubview(introLabel)
         contentView.addSubview(relatedSpotView)
     }
@@ -59,12 +62,9 @@ final class ParkDetailView: UIScrollView {
         infoView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(12)
             make.top.equalTo(mainImageView.snp.bottom).offset(12)
-            make.height.equalTo(100)
+            make.height.equalTo(140)
         }
         
-        introLabel.font = UIFont.systemFont(ofSize: 16)
-        introLabel.textColor = UIColor.lightGray
-        introLabel.numberOfLines = 0
         introLabel.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(12)
             make.top.equalTo(infoView.snp.bottom).offset(16)

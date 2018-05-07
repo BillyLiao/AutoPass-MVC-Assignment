@@ -31,7 +31,11 @@ final class ParkDetailUIController: ParkDetailDelegate {
     func update(newState: UIState<ParkSpot>) {
         switch(spotState, newState) {
         case (.Loading, .Loading): print("loading...")
-        case (.Loading, .Success(let spots)): parkDetailView.relatedSpotView.configure(with: spots)
+        case (.Loading, .Success(let spots)):
+            parkDetailView.relatedSpotView.configure(with: spots)
+            parkDetailView.relatedSpotView.simpleViews.forEach({ (spotView) in
+                spotView.delegate = parkDetailView.superViewController as? SimpleSpotViewDelegate
+            })
             
         default: fatalError("Not yet implemented \(spotState) to \(newState)")
         }

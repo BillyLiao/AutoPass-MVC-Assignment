@@ -10,12 +10,12 @@ import UIKit
 
 internal final class RelatedSpotView: UIScrollView {
 
-    private var simpleViews: [SimpleSpotView] = [SimpleSpotView]()
+    internal private(set) var simpleViews: [SimpleSpotView] = [SimpleSpotView]()
     
     // MARK: - Init
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
+                    
         alwaysBounceHorizontal = true
         showsHorizontalScrollIndicator = false
     }
@@ -31,7 +31,6 @@ internal final class RelatedSpotView: UIScrollView {
             let simpleSpotView = SimpleSpotView()
             simpleSpotView.configure(with: spot)
             simpleSpotView.frame.origin.x = (simpleSpotView.frame.width + 5) * index.cgFloat
-            
             addSubview(simpleSpotView)
             
             simpleViews.append(simpleSpotView)

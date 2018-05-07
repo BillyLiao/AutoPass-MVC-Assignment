@@ -61,7 +61,7 @@ final class ParkDetailViewController: UIViewController, Navigable {
     func configureNavigationBar() {
         view.addSubview(navigationBar)
         navigationBar.setButton(at: .left, type: .back)
-        navigationBar.title = "公園資訊"
+        navigationBar.title = park.parkName
         navigationBar.delegate = self
     }
 }
@@ -69,5 +69,15 @@ final class ParkDetailViewController: UIViewController, Navigable {
 extension ParkDetailViewController: ColorgyNavigationBarDelegate {
     func colorgyNavigationBarBackButtonClicked() {
         self.asyncDismiss(true)
+    }
+}
+
+extension ParkDetailViewController: SimpleSpotViewDelegate {
+    func simpleSpotViewDidTapped(_ spotView: SimpleSpotView) {
+        if let spot = parkDetailManager.spots.filter({ $0.name == spotView.nameLabel.text }).first {
+            let vc = SpotDetailViewController(spot: spot)
+            navigationTransitionDelegate?.presentingViewController = vc
+            self.asyncPresent(vc, animated: true)
+        }
     }
 }
