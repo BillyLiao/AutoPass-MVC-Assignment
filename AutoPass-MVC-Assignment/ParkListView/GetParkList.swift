@@ -21,6 +21,7 @@ public class GetParkList : NetworkRequest {
     
     private var offset: Int = 0
     public func perform(offset: Int = 0) -> Promise<ResponseType> {
+        self.offset = offset
         return networkClient.performRequest(self).then(execute: responseHandler)
     }
 }

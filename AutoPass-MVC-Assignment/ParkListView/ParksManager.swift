@@ -20,12 +20,14 @@ protocol ParksDelegate {
 
 protocol ParksHandler: class {
     var delegate: ParksDelegate? { get set }
+    var parks: [Park] { get set }
     func loadData(page: Int)
 }
 
 final class ParksManager: ParksHandler {
     private let networkRequest: GetParkList
     var delegate: ParksDelegate?
+    var parks: [Park] = []
     
     init(networkRequest: GetParkList) {
         self.networkRequest = networkRequest
@@ -35,8 +37,10 @@ final class ParksManager: ParksHandler {
         guard let _ = self.delegate else { fatalError("Delegate needed") }
         
         delegate?.state = .Loading
-        networkRequest.perform(offset: page).then { [weak self] (list) in
+        networkRequest.perform(offset: page).then { [weak self] (list) -> Void in
+            self?.parks.append(contentsOf: list.items)
             self?.delegate?.state = .Success(list.items)
+            return
         }.catch { (e) in
             print(e)
         }

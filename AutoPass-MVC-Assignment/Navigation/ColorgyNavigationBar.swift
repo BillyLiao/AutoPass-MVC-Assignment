@@ -20,7 +20,7 @@ public enum ColorgyNavigationBarButtonType {
     
     var data: (image: UIImage, selector: Selector) {
         switch self {
-        case .back : return (#imageLiteral(resourceName: "BackButton"), #selector(ColorgyNavigationBar.backButtonClicked))
+        case .back : return (#imageLiteral(resourceName: "BackIcon"), #selector(ColorgyNavigationBar.backButtonClicked))
         }
     }
 }
