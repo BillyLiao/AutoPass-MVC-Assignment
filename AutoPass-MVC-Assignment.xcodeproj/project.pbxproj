@@ -22,7 +22,7 @@
 		514B959C209EE7C6000B8D00 /* ParkDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B959B209EE7C6000B8D00 /* ParkDetailManager.swift */; };
 		514F4C1420A0181800762D92 /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F4C1320A0181800762D92 /* SpotDetailViewController.swift */; };
 		514F4C1620A0182800762D92 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F4C1520A0182800762D92 /* SpotDetailView.swift */; };
-		514F4C1A20A065B900762D92 /* FavoritesParkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F4C1920A065B900762D92 /* FavoritesParkRecord.swift */; };
+		514F4C1C20A098D500762D92 /* FavoriteParkRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F4C1B20A098D500762D92 /* FavoriteParkRealmObject.swift */; };
 		51A6B74D209DA0580096D983 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B74C209DA0580096D983 /* CellConfigurable.swift */; };
 		51A6B74F209DA06B0096D983 /* UITableView+Dequeuing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B74E209DA06B0096D983 /* UITableView+Dequeuing.swift */; };
 		51A6B751209DA3740096D983 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6B750209DA3740096D983 /* TableViewDataSource.swift */; };
@@ -61,6 +61,7 @@
 		51BE2300209D7FF400FF0867 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE22FF209D7FF400FF0867 /* FavoritesViewController.swift */; };
 		51BE2302209D7FFF00FF0867 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE2301209D7FFF00FF0867 /* MapViewController.swift */; };
 		51BE2304209D800C00FF0867 /* ParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE2303209D800C00FF0867 /* ParkListViewController.swift */; };
+		51BF06E520A09DC3008BA218 /* FavoriteParkListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF06E420A09DC3008BA218 /* FavoriteParkListManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +81,7 @@
 		514B959B209EE7C6000B8D00 /* ParkDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailManager.swift; sourceTree = "<group>"; };
 		514F4C1320A0181800762D92 /* SpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
 		514F4C1520A0182800762D92 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
-		514F4C1920A065B900762D92 /* FavoritesParkRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesParkRecord.swift; sourceTree = "<group>"; };
+		514F4C1B20A098D500762D92 /* FavoriteParkRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteParkRealmObject.swift; sourceTree = "<group>"; };
 		51A6B74C209DA0580096D983 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		51A6B74E209DA06B0096D983 /* UITableView+Dequeuing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeuing.swift"; sourceTree = "<group>"; };
 		51A6B750209DA3740096D983 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		51BE22FF209D7FF400FF0867 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		51BE2301209D7FFF00FF0867 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		51BE2303209D800C00FF0867 /* ParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkListViewController.swift; sourceTree = "<group>"; };
+		51BF06E420A09DC3008BA218 /* FavoriteParkListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteParkListManager.swift; sourceTree = "<group>"; };
 		BC66A3065A9E3D2ED130D70E /* Pods_AutoPass_MVC_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoPass_MVC_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -306,7 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				51BE22FF209D7FF400FF0867 /* FavoritesViewController.swift */,
-				514F4C1920A065B900762D92 /* FavoritesParkRecord.swift */,
+				51BF06E420A09DC3008BA218 /* FavoriteParkListManager.swift */,
+				514F4C1B20A098D500762D92 /* FavoriteParkRealmObject.swift */,
 			);
 			path = FavoritesView;
 			sourceTree = "<group>";
@@ -476,7 +479,6 @@
 			files = (
 				51BE22EC209D7A3400FF0867 /* Navigable.swift in Sources */,
 				51A6B75B209DB5410096D983 /* ParkListUIController.swift in Sources */,
-				514F4C1A20A065B900762D92 /* FavoritesParkRecord.swift in Sources */,
 				51BE22E6209D7A3400FF0867 /* SwiftyJSONExtension.swift in Sources */,
 				514F4C1620A0182800762D92 /* SpotDetailView.swift in Sources */,
 				51A6B74D209DA0580096D983 /* CellConfigurable.swift in Sources */,
@@ -491,6 +493,7 @@
 				51BE22E8209D7A3400FF0867 /* UIViewControllerExtension.swift in Sources */,
 				5114EEEE209F678200B91B25 /* ParkFacilityList.swift in Sources */,
 				51BE22E2209D7A3400FF0867 /* CGFloat+Int+UIView.swift in Sources */,
+				51BF06E520A09DC3008BA218 /* FavoriteParkListManager.swift in Sources */,
 				51BE22F8209D7DE800FF0867 /* Park.swift in Sources */,
 				51BE22ED209D7A3400FF0867 /* JSONDecodable.swift in Sources */,
 				5114EEEA209F666D00B91B25 /* GetParkFacilityList.swift in Sources */,
@@ -520,6 +523,7 @@
 				51BE22E3209D7A3400FF0867 /* CustomColor.swift in Sources */,
 				514B958E209ED345000B8D00 /* ParkDetailViewController.swift in Sources */,
 				51BE22B9209D78B200FF0867 /* AppDelegate.swift in Sources */,
+				514F4C1C20A098D500762D92 /* FavoriteParkRealmObject.swift in Sources */,
 				51BE22EF209D7A3400FF0867 /* NetworkRequest.swift in Sources */,
 				51A6B751209DA3740096D983 /* TableViewDataSource.swift in Sources */,
 				51A6B753209DA5660096D983 /* ParksManager.swift in Sources */,
