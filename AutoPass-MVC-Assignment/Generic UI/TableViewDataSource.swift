@@ -30,6 +30,7 @@ final class TableViewDataSource<Model, Cell: UITableViewCell>: NSObject, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: Cell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.cellConfigurator = dataSource[indexPath.row]
+    
         return cell
     }
 }
