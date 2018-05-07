@@ -22,6 +22,7 @@ final class ParkCell: UITableViewCell {
             nameLabel.text = configurator.name
             adminAreaLabel.text = configurator.adminArea
             introLabel.text = configurator.introduction
+            starButton.isSelected = configurator.starred
         }
     }
     
@@ -39,7 +40,10 @@ final class ParkCell: UITableViewCell {
         
         mainImageView.layer.cornerRadius = mainImageView.frame.width/2
         mainImageView.clipsToBounds = true
-        starButton.setTitle("Favorite", for: .normal)
+        starButton.setTitle("", for: .normal)
+        starButton.setImage(#imageLiteral(resourceName: "FavoriteButtonUnfilledIcon").withRenderingMode(.alwaysOriginal), for: .normal)
+        starButton.setImage(#imageLiteral(resourceName: "FavoriteButtonFilledIcon").withRenderingMode(.alwaysOriginal), for: .selected)
+        starButton.tintColor = UIColor.clear
         mapButton.setTitle("Map", for: .normal)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 17)
         adminAreaLabel.font = UIFont.systemFont(ofSize: 17)
