@@ -16,6 +16,7 @@ final class ParkBasicInfoView: UIView {
     let typeLabel: UILabel = UILabel()
     let locationLabel: UILabel = UILabel()
     let openTimeLabel: UILabel = UILabel()
+    let facilityLabel: UILabel = UILabel()
     
     init() {
         super.init(frame: .zero)
@@ -23,13 +24,12 @@ final class ParkBasicInfoView: UIView {
         addSubview(nameLabel)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 17)
         nameLabel.snp.makeConstraints { (make) in
-            make.left.right.top.equalToSuperview()
+            make.top.equalToSuperview()
         }
         
         addSubview(typeLabel)
         typeLabel.font = UIFont.systemFont(ofSize: 17)
         typeLabel.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
         }
         
@@ -37,7 +37,6 @@ final class ParkBasicInfoView: UIView {
         locationLabel.font = UIFont.systemFont(ofSize: 17)
         locationLabel.textColor = UIColor.darkGray
         locationLabel.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
             make.top.equalTo(typeLabel.snp.bottom).offset(8)
         }
         
@@ -45,8 +44,20 @@ final class ParkBasicInfoView: UIView {
         openTimeLabel.font = UIFont.systemFont(ofSize: 16)
         openTimeLabel.textColor = UIColor.darkGray
         openTimeLabel.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
             make.top.equalTo(locationLabel.snp.bottom).offset(8)
+        }
+        
+        addSubview(facilityLabel)
+        facilityLabel.font = UIFont.systemFont(ofSize: 16)
+        facilityLabel.textColor = UIColor.darkGray
+        facilityLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(openTimeLabel.snp.bottom).offset(8)
+        }
+        
+        self.subviews.forEach { (view) in
+            view.snp.makeConstraints({ (make) in
+                make.left.right.equalToSuperview()
+            })
         }
     }
     
@@ -54,7 +65,11 @@ final class ParkBasicInfoView: UIView {
         nameLabel.text = park.parkName
         typeLabel.text = park.type
         locationLabel.text = "\(park.adminArea)  \(park.location)"
-        openTimeLabel.text = park.openTime.isEmpty ? "無此資料" : park.openTime
+        openTimeLabel.text = park.openTime.isEmpty ? "查無開放時間" : park.openTime
+    }
+    
+    func configure(with facilities: [ParkFacility]) {
+        facilityLabel.text = "設施：" + facilities.map{ $0.name }.joined(separator: "、")
     }
     
     required init?(coder aDecoder: NSCoder) {
