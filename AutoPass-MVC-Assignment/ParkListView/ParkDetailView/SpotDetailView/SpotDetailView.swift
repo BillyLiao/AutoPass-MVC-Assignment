@@ -12,6 +12,7 @@ import SDWebImage
 
 final class SpotDetailView: UIScrollView {
     // MARK: - View Components
+    let contentView: UIView = UIView()
     let spotImageView: UIImageView = UIImageView()
     let parkNameLabel: UILabel = UILabel()
     let spotNameLabel: UILabel = UILabel()
@@ -20,18 +21,21 @@ final class SpotDetailView: UIScrollView {
 
     init() {
         super.init(frame: .zero)
+        spotImageView.contentMode = .scaleAspectFit
         parkNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
         spotNameLabel.font = UIFont.systemFont(ofSize: 17)
         openTimeLabel.font = UIFont.systemFont(ofSize: 16)
         openTimeLabel.textColor = UIColor.darkGray
+        introLabel.numberOfLines = 0
         introLabel.font = UIFont.systemFont(ofSize: 16)
         introLabel.textColor = UIColor.lightGray
         
-        addSubview(spotImageView)
-        addSubview(parkNameLabel)
-        addSubview(spotNameLabel)
-        addSubview(openTimeLabel)
-        addSubview(introLabel)
+        addSubview(contentView)
+        contentView.addSubview(spotImageView)
+        contentView.addSubview(parkNameLabel)
+        contentView.addSubview(spotNameLabel)
+        contentView.addSubview(openTimeLabel)
+        contentView.addSubview(introLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,30 +43,32 @@ final class SpotDetailView: UIScrollView {
     }
     
     override func layoutSubviews() {
-        subviews.forEach { (view) in
-            view.snp.makeConstraints({ (make) in
-                make.left.right.equalToSuperview()
-            })
+        contentView.snp.makeConstraints { (make) in
+            make.bottom.top.equalToSuperview()
         }
         
         spotImageView.snp.makeConstraints { (make) in
             make.height.equalTo(200)
-            make.top.equalToSuperview()
+            make.left.right.top.equalTo(contentView)
         }
         
         parkNameLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(contentView)
             make.top.equalTo(spotImageView.snp.bottom).offset(12)
         }
         
         spotNameLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(contentView)
             make.top.equalTo(parkNameLabel.snp.bottom).offset(4)
         }
         
         openTimeLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(contentView)
             make.top.equalTo(spotNameLabel.snp.bottom).offset(4)
         }
         
         introLabel.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(contentView)
             make.top.equalTo(openTimeLabel.snp.bottom).offset(12)
         }
     }
@@ -73,5 +79,6 @@ final class SpotDetailView: UIScrollView {
         spotNameLabel.text = spot.name
         openTimeLabel.text = spot.openTime
         introLabel.text = spot.intro
+        introLabel.sizeToFit()
     }
 }
