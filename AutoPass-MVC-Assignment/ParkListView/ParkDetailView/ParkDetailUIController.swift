@@ -9,9 +9,14 @@
 import UIKit
 
 final class ParkDetailUIController: ParkDetailDelegate {
-    typealias DataType = ParkSpot
     
-    var state: UIState<DataType> = .Loading {
+    var spotState: UIState<ParkSpot> = .Loading {
+        willSet(newState) {
+            update(newState: newState)
+        }
+    }
+    
+    var facilityState: UIState<ParkFacility> = .Loading {
         willSet(newState) {
             update(newState: newState)
         }
@@ -23,12 +28,21 @@ final class ParkDetailUIController: ParkDetailDelegate {
         self.parkDetailView = parkDetailView
     }
     
-    func update(newState: UIState<DataType>) {
-        switch(state, newState) {
+    func update(newState: UIState<ParkSpot>) {
+        switch(spotState, newState) {
         case (.Loading, .Loading): print("loading...")
         case (.Loading, .Success(let spots)): parkDetailView.relatedSpotView.configure(with: spots)
             
-        default: fatalError("Not yet implemented \(state) to \(newState)")
+        default: fatalError("Not yet implemented \(spotState) to \(newState)")
+        }
+    }
+    
+    func update(newState: UIState<ParkFacility>) {
+        switch(facilityState, newState) {
+        case (.Loading, .Loading): print("loading...")
+        case (.Loading, .Success(let facilities)): parkDetailView.infoView.configure(with: facilities)
+            
+        default: fatalError("Not yet implemented \(facilityState) to \(newState)")
         }
     }
 }

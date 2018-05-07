@@ -10,7 +10,8 @@ import Foundation
 import PromiseKit
 
 protocol ParkDetailDelegate {
-    var state: UIState<ParkSpot> { get set }
+    var spotState : UIState<ParkSpot> { get set }
+    var facilityState : UIState<ParkFacility> { get set }
 }
 
 protocol ParkDetailHandler: class {
@@ -32,12 +33,18 @@ final class ParkDetailManager: ParkDetailHandler {
     }
     
     func loadData() {
-        delegate?.state = .Loading
-        
-        getParkSpotList.perform(name: parkName).then { [weak self] (list) in
-            self?.delegate?.state = .Success(list.items)
-        }.catch { e in
-            print(e) // TODO: Handle
+        delegate?.spotState = .Loading
+        delegate?.facilityState = .Loading
+
+        when(fulfilled:
+        getParkSpotList.perform(name: parkName),
+        getParkFacilityList.perform(name: parkName))
+        .then { [weak self] (spotList, facilityList) -> Void in
+            self?.delegate?.spotState = .Success(spotList.items)
+            self?.delegate?.facilityState = .Success(facilityList.items)
+            return
+        }.catch { (e) in
+            print(e)
         }
     }
 }
