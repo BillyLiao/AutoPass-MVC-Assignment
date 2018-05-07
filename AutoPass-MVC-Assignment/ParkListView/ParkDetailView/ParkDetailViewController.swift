@@ -71,3 +71,13 @@ extension ParkDetailViewController: ColorgyNavigationBarDelegate {
         self.asyncDismiss(true)
     }
 }
+
+extension ParkDetailViewController: SimpleSpotViewDelegate {
+    func simpleSpotViewDidTapped(_ spotView: SimpleSpotView) {
+        if let spot = parkDetailManager.spots.filter({ $0.name == spotView.nameLabel.text }).first {
+            let vc = SpotDetailViewController(spot: spot)
+            navigationTransitionDelegate?.presentingViewController = vc
+            self.asyncPresent(vc, animated: true)
+        }
+    }
+}
