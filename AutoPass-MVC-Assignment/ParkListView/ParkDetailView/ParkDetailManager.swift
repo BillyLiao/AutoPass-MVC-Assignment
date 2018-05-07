@@ -15,6 +15,9 @@ protocol ParkDetailDelegate {
 }
 
 protocol ParkDetailHandler: class {
+    var spots: [ParkSpot] { get set }
+    var facilities: [ParkFacility] { get set }
+    
     var delegate: ParkDetailDelegate? { get set }
     func loadData()
 }
@@ -22,9 +25,12 @@ protocol ParkDetailHandler: class {
 final class ParkDetailManager: ParkDetailHandler {
     
     var delegate: ParkDetailDelegate?
-    var getParkSpotList: GetParkSpotList
-    var getParkFacilityList: GetParkFacilityList
-    var parkName: String
+    let getParkSpotList: GetParkSpotList
+    let getParkFacilityList: GetParkFacilityList
+    let parkName: String
+    
+    internal var spots: [ParkSpot] = []
+    internal var facilities: [ParkFacility] = []
     
     init(_ getParkSpotList: GetParkSpotList, _ getParkFacilityList: GetParkFacilityList, parkName: String) {
         self.getParkSpotList = getParkSpotList
@@ -40,6 +46,8 @@ final class ParkDetailManager: ParkDetailHandler {
         getParkSpotList.perform(name: parkName),
         getParkFacilityList.perform(name: parkName))
         .then { [weak self] (spotList, facilityList) -> Void in
+            self?.spots = spotList.items
+            self?.facilities = facilityList.items
             self?.delegate?.spotState = .Success(spotList.items)
             self?.delegate?.facilityState = .Success(facilityList.items)
             return
