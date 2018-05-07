@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 internal final class ParkListViewController: UIViewController, Navigable {
     
@@ -72,6 +74,19 @@ extension ParkListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row+1) == tableView.numberOfRows(inSection: indexPath.section)-5 {
             parksHandler.loadData(page: (indexPath.row+1)/10)
+        }
+        
+        (cell as? ParkCell)?.mapButton.rx.tap.bind {
+            // TODO: - Handle
+        }
+        
+        (cell as? ParkCell)?.starButton.rx.tap.bind { [weak self] in
+            if let _ = self,
+               let parkCell = (cell as? ParkCell),
+               let wasStarred = parkCell.cellConfigurator?.starred {
+                parkCell.cellConfigurator!.starred = !wasStarred
+                self?.parksHandler.parkStarredStateChanged(index: indexPath.row, to: !wasStarred)
+            }
         }
     }
     
