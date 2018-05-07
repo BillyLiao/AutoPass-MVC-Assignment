@@ -30,7 +30,7 @@ final class ParkBasicInfoView: UIView {
         addSubview(typeLabel)
         typeLabel.font = UIFont.systemFont(ofSize: 17)
         typeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(nameLabel.snp.bottom).offset(8)
+            make.top.equalTo(nameLabel.snp.bottom)
         }
         
         addSubview(locationLabel)
@@ -44,14 +44,16 @@ final class ParkBasicInfoView: UIView {
         openTimeLabel.font = UIFont.systemFont(ofSize: 16)
         openTimeLabel.textColor = UIColor.darkGray
         openTimeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(locationLabel.snp.bottom).offset(8)
+            make.top.equalTo(locationLabel.snp.bottom).offset(4)
         }
         
         addSubview(facilityLabel)
         facilityLabel.font = UIFont.systemFont(ofSize: 16)
         facilityLabel.textColor = UIColor.darkGray
+        facilityLabel.numberOfLines = 0
+        facilityLabel.text = "暫無設施資料"
         facilityLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(openTimeLabel.snp.bottom).offset(8)
+            make.top.equalTo(openTimeLabel.snp.bottom).offset(4)
         }
         
         self.subviews.forEach { (view) in
