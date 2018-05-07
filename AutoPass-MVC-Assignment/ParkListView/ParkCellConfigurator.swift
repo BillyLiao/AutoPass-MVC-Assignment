@@ -29,7 +29,7 @@ struct ParkCellConfigurator: ParkCellRepresentable {
         name = park.parkName
         adminArea = park.adminArea
         introduction = park.intro
-        if let _ = RealmManager<FavoritesParkTable>().query(id: park.id) {
+        if let _ = RealmManager<FavoritesParkRecord>().query(id: park.id) {
             starred = true
         }
     }
