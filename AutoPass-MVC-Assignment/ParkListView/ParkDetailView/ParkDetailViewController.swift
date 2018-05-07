@@ -61,7 +61,7 @@ final class ParkDetailViewController: UIViewController, Navigable {
     func configureNavigationBar() {
         view.addSubview(navigationBar)
         navigationBar.setButton(at: .left, type: .back)
-        navigationBar.title = "公園資訊"
+        navigationBar.title = park.parkName
         navigationBar.delegate = self
     }
 }
