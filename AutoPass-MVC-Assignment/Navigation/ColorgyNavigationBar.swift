@@ -156,10 +156,11 @@ open class ColorgyNavigationBar: UIView {
 	// MARK: - View Getter
     fileprivate func getBarButton(image: UIImage, position: ColorgyNavigationBarButtonPosition) -> UIButton {
         let button = UIButton(type: .custom)
-        button.setImage(image, for: .normal)
+        button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
         button.contentMode = .scaleAspectFill
         button.adjustsImageWhenHighlighted = false
-
+        button.tintColor = UIColor.white
+        
         button.frame.size = CGSize(width: 40, height: 30)
         button.center.y = centerY
         
