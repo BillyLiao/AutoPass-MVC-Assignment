@@ -11,6 +11,7 @@ import Foundation
 enum UIState<T> {
     case Loading
     case Success([T])
+    case Refresh([T])
     case Failure
 }
 
@@ -24,6 +25,7 @@ protocol ParksHandler: class {
     var realmManager: RealmManager<FavoriteParkRealmObject> { get set }
 
     func loadData(page: Int)
+    func refresh()
     func parkStarredStateChanged(index: Int, to: Bool)
 }
 
@@ -50,6 +52,10 @@ final class ParksManager: ParksHandler {
         }.catch { (e) in
             print(e)
         }
+    }
+    
+    func refresh() {
+        delegate?.state = .Refresh(parks)
     }
     
     func parkStarredStateChanged(index: Int, to: Bool) {
