@@ -45,6 +45,10 @@ internal final class ParkListViewController: UIViewController, Navigable {
         
         parksHandler.loadData(page: 0)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        parksHandler.refresh()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,17 +80,17 @@ extension ParkListViewController: UITableViewDelegate {
             parksHandler.loadData(page: (indexPath.row+1)/10)
         }
         
-        (cell as? ParkCell)?.mapButton.rx.tap.bind {
-            // TODO: - Handle
-        }
-        
-        (cell as? ParkCell)?.starButton.rx.tap.bind { [weak self] in
-            if let _ = self,
-               let parkCell = (cell as? ParkCell),
-               let wasStarred = parkCell.cellConfigurator?.starred {
-                parkCell.cellConfigurator!.starred = !wasStarred
-                self?.parksHandler.parkStarredStateChanged(index: indexPath.row, to: !wasStarred)
-            }
+        if let cell = cell as? ParkCell {
+            cell.mapButton.rx.tap.asDriver().drive(onNext: {
+                // TODO: - Handle
+            }).disposed(by: cell.bag)
+            
+            cell.starButton.rx.tap.asDriver().drive(onNext: { [weak self] in
+                if let wasStarred = cell.cellConfigurator?.starred {
+                    cell.cellConfigurator!.starred = !wasStarred
+                    self?.parksHandler.parkStarredStateChanged(index: indexPath.row, to: !wasStarred)
+                }
+            }).disposed(by: cell.bag)
         }
     }
     
