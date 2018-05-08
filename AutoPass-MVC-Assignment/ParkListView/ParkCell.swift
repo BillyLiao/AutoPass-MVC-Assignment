@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import RxSwift
 
 extension ParkCell: CellConfigurable {}
 extension ParkCell: Reusable {}
@@ -32,6 +33,13 @@ final class ParkCell: UITableViewCell {
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var introLabel: UILabel!
+    
+    var bag: DisposeBag = DisposeBag()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bag = DisposeBag()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
