@@ -8,20 +8,22 @@
 
 import Foundation
 import SwiftyJSON
+import MapKit
 
-public struct Park: JSONDecodable {
+public class Park: NSObject, JSONDecodable {
     
     let id: String
     let parkName: String
     let openTime: String
     let imageURL: URL
     let intro: String
-    let coordinate: (longitude: Float, latitude: Float)
+    let longitude: Float
+    let latitude: Float
     let adminArea: String
     let location: String
     let type: String
 
-    public init(decodeUsing json: JSON) throws {
+    public required init(decodeUsing json: JSON) throws {
         guard
             let id = json["_id"].int,
             let parkName = json["ParkName"].string,
@@ -42,7 +44,8 @@ public struct Park: JSONDecodable {
         self.openTime = json["OpenTime"].string ?? ""
         self.imageURL = imageURL
         self.intro = intro
-        self.coordinate = (longitude, latitude)
+        self.latitude = latitude
+        self.longitude = longitude
         self.adminArea = adminArea
         self.location = location
         self.type = type
@@ -54,9 +57,22 @@ public struct Park: JSONDecodable {
         self.openTime = realmObject.openTime
         self.imageURL = URL(string: realmObject.imageURLString)!
         self.intro = realmObject.intro
-        self.coordinate = (realmObject.longitude, realmObject.latitude)
+        self.latitude = realmObject.latitude
+        self.longitude = realmObject.longitude
         self.adminArea = realmObject.adminArea
         self.location = realmObject.location
         self.type = realmObject.type
     }
 }
+
+extension Park: MKAnnotation {
+    public var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+    }
+    
+    public var title: String? {
+        return parkName
+    }
+}
+
+
