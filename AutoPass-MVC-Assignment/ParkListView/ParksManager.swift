@@ -11,6 +11,7 @@ import Foundation
 enum UIState<T> {
     case Loading
     case Success([T])
+    case Refresh([T])
     case Failure
 }
 
@@ -21,16 +22,23 @@ protocol ParksDelegate {
 protocol ParksHandler: class {
     var delegate: ParksDelegate? { get set }
     var parks: [Park] { get set }
+    var realmManager: RealmManager<FavoriteParkRealmObject> { get set }
+
     func loadData(page: Int)
+    func refresh()
+    func parkStarredStateChanged(index: Int, to: Bool)
 }
 
 final class ParksManager: ParksHandler {
-    private let networkRequest: GetParkList
     var delegate: ParksDelegate?
+
+    let networkRequest: GetParkList
     var parks: [Park] = []
-    
-    init(networkRequest: GetParkList) {
+    var realmManager: RealmManager<FavoriteParkRealmObject>
+
+    init(_ networkRequest: GetParkList, realmManager: RealmManager<FavoriteParkRealmObject>) {
         self.networkRequest = networkRequest
+        self.realmManager = realmManager
     }
     
     func loadData(page: Int = 0) {
@@ -43,6 +51,21 @@ final class ParksManager: ParksHandler {
             return
         }.catch { (e) in
             print(e)
+        }
+    }
+    
+    func refresh() {
+        delegate?.state = .Refresh(parks)
+    }
+    
+    func parkStarredStateChanged(index: Int, to: Bool) {
+        let park = parks[index]
+        
+        if to == true {
+            let realmObject = FavoriteParkRealmObject(park)
+            try? realmManager.add(object: realmObject, completionHandler: nil)
+        }else {
+            try? realmManager.remove(id: park.id, completionHandler: nil)
         }
     }
 }

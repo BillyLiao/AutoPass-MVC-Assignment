@@ -51,7 +51,7 @@ final class ParkBasicInfoView: UIView {
         facilityLabel.font = UIFont.systemFont(ofSize: 16)
         facilityLabel.textColor = UIColor.darkGray
         facilityLabel.numberOfLines = 0
-        facilityLabel.text = "暫無設施資料"
+        facilityLabel.text = "設施："
         facilityLabel.snp.makeConstraints { (make) in
             make.top.equalTo(openTimeLabel.snp.bottom).offset(4)
         }
@@ -71,7 +71,8 @@ final class ParkBasicInfoView: UIView {
     }
     
     func configure(with facilities: [ParkFacility]) {
-        facilityLabel.text = "設施：" + facilities.map{ $0.name }.joined(separator: "、")
+        let facilityContent = facilities.isEmpty ? "無" : facilities.map{ $0.name }.joined(separator: "、")
+        facilityLabel.text = facilityLabel.text! + facilityContent
     }
     
     required init?(coder aDecoder: NSCoder) {

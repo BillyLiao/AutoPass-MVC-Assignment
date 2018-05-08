@@ -47,4 +47,16 @@ public struct Park: JSONDecodable {
         self.location = location
         self.type = type
     }
+    
+    init(realmObject: FavoriteParkRealmObject) {
+        self.id = realmObject.id
+        self.parkName = realmObject.name
+        self.openTime = realmObject.openTime
+        self.imageURL = URL(string: realmObject.imageURLString)!
+        self.intro = realmObject.intro
+        self.coordinate = (realmObject.longitude, realmObject.latitude)
+        self.adminArea = realmObject.adminArea
+        self.location = realmObject.location
+        self.type = realmObject.type
+    }
 }

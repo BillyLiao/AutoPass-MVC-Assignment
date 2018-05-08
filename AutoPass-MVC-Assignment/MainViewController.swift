@@ -12,9 +12,9 @@ internal final class MainViewController: UITabBarController {
 
     // MARK: - View Controllers
     let vcs: [UIViewController] = [
-        ParkListViewController(parksHandler: ParksManager(networkRequest: GetParkList())),
+        ParkListViewController(parksHandler: ParksManager(GetParkList(), realmManager: RealmManager<FavoriteParkRealmObject>())),
         MapViewController(),
-        FavoritesViewController()
+        FavoritesViewController(parkManager: FavoriteParkManager(realmManager: RealmManager<FavoriteParkRealmObject>()))
     ]
  
     override func viewDidLoad() {
