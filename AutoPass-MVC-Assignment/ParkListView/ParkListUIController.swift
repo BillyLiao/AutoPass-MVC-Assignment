@@ -35,8 +35,13 @@ extension ParkListUIController: ParksDelegate {
         switch(state, newState) {
             
         case (.Loading, .Loading): toLoading()
-        case (.Loading, .Success(let parks)): loadingToSuccess(parks)
+        case (.Loading, .Refresh): print("loading to refrest")
+        case (.Loading, .Success(let parks)): toSuccess(parks)
+        case (.Refresh, .Success(let parks)): toSuccess(parks)
         case (.Success, .Loading): toLoading()
+        case (.Success, .Refresh(let parks)): toRefresh(parks)
+        case (.Refresh, .Loading): toLoading()
+        case (.Refresh, .Refresh(let parks)): toRefresh(parks)
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -47,8 +52,12 @@ extension ParkListUIController: ParksDelegate {
         loadingView.frame = CGRect(origin: .zero, size: view.frame.size)
     }
     
-    func loadingToSuccess(_ parks: [DataType]) {
+    func toSuccess(_ parks: [DataType]) {
         loadingView.removeFromSuperview()
         tableViewDataSource.dataSource.append(contentsOf: parks.map(ParkCellConfigurator.init))
+    }
+    
+    func toRefresh(_ parks: [DataType]) {
+        tableViewDataSource.dataSource = parks.map(ParkCellConfigurator.init)
     }
 }
