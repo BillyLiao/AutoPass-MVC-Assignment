@@ -11,15 +11,17 @@ import UIKit
 internal final class MainViewController: UITabBarController {
 
     // MARK: - View Controllers
-    let vcs: [UIViewController] = [
-        ParkListViewController(parksHandler: ParksManager(GetParkList(), realmManager: RealmManager<FavoriteParkRealmObject>())),
-        MapViewController(),
-        FavoritesViewController(parkManager: FavoriteParkManager(realmManager: RealmManager<FavoriteParkRealmObject>()))
-    ]
- 
+    var vcs: [UIViewController] = []
+    
+    var parksHandler: ParksHandler = ParksManager(GetParkList(), realmManager: RealmManager<FavoriteParkRealmObject>())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        vcs = [ParkListViewController(parksHandler: parksHandler),
+               MapViewController(parksHandler: parksHandler),
+               FavoritesViewController(parkManager: FavoriteParkManager(realmManager: RealmManager<FavoriteParkRealmObject>()))]
+        
         // Do any additional setup after loading the view.
         setupBarItems()
         
