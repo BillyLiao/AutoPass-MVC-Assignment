@@ -34,15 +34,15 @@ extension ParkListUIController: ParksDelegate {
     func update(_ newState: UIState<DataType>) {
         switch(state, newState) {
             
-        case (.Loading, .Loading): loadingToLoading()
+        case (.Loading, .Loading): toLoading()
         case (.Loading, .Success(let parks)): loadingToSuccess(parks)
-        case (.Success, .Loading): loadingToLoading()
+        case (.Success, .Loading): toLoading()
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
     }
     
-    func loadingToLoading() {
+    func toLoading() {
         view.addSubview(loadingView)
         loadingView.frame = CGRect(origin: .zero, size: view.frame.size)
     }
