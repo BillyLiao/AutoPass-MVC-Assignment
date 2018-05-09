@@ -23,7 +23,7 @@ internal final class MapViewController: UIViewController, Navigable {
     var targetPark: Park? {
         didSet{
             guard targetPark != oldValue, targetPark != nil else { return }
-            setCenterTo(coordinate: targetPark!.coordinate)
+            setCenterTo(park: targetPark!)
         }
     }
     
@@ -82,12 +82,13 @@ internal final class MapViewController: UIViewController, Navigable {
         mapView.delegate = self
     }
     
-    private func setCenterTo(coordinate: CLLocationCoordinate2D) {
+    private func setCenterTo(park: Park) {
         let regionRadius = 3000
-        let region = MKCoordinateRegionMakeWithDistance(coordinate, CLLocationDistance(regionRadius), CLLocationDistance(regionRadius))
+        let region = MKCoordinateRegionMakeWithDistance(park.coordinate, CLLocationDistance(regionRadius), CLLocationDistance(regionRadius))
         let adjustedRegion = mapView.regionThatFits(region)
 
         mapView.setRegion(adjustedRegion, animated: false)
+        mapView.selectAnnotation(park, animated: true)
     }
 }
 
