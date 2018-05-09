@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SnapKit
+import RxCocoa
 
 internal final class MapViewController: UIViewController, Navigable {
 
@@ -26,7 +27,7 @@ internal final class MapViewController: UIViewController, Navigable {
         }
     }
     
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate?
+    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
     
     init(parksHandler: ParksHandler) {
         self.parksHandler = parksHandler
@@ -82,8 +83,6 @@ internal final class MapViewController: UIViewController, Navigable {
     }
     
     private func setCenterTo(coordinate: CLLocationCoordinate2D) {
-        locationManager.stopUpdatingLocation()
-        
         let regionRadius = 3000
         let region = MKCoordinateRegionMakeWithDistance(coordinate, CLLocationDistance(regionRadius), CLLocationDistance(regionRadius))
         let adjustedRegion = mapView.regionThatFits(region)
@@ -114,6 +113,9 @@ extension MapViewController: MKMapViewDelegate {
                 mapItem.openInMaps(launchOptions: options)
             }).disposed(by: calloutView.bag)
             
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(calloutViewTapped))
+            calloutView.addGestureRecognizer(tapGesture)
+            
             view.addSubview(calloutView)
         }
     }
@@ -124,6 +126,14 @@ extension MapViewController: MKMapViewDelegate {
                 subView.removeFromSuperview()
             }
         }
+    }
+    
+    @objc func calloutViewTapped() {
+        guard let park = mapView.selectedAnnotations.first as? Park else { return }
+        let parkDetailManager = ParkDetailManager.init(GetParkSpotList(), GetParkFacilityList(), parkName: park.parkName)
+        let vc = ParkDetailViewController(park: park, parkDetailManager: parkDetailManager)
+        navigationTransitionDelegate?.presentingViewController = vc
+        self.asyncPresent(vc, animated: true)
     }
 }
 

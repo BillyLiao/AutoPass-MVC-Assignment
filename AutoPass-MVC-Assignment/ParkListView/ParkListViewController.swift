@@ -48,7 +48,7 @@ internal final class ParkListViewController: UIViewController, Navigable {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        parksHandler.refresh()
+        parksHandler.refresh() // TODO: Optimization
     }
 
     override func didReceiveMemoryWarning() {
