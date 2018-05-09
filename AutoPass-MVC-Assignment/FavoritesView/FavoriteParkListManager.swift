@@ -11,7 +11,6 @@ import Foundation
 protocol FavoriteParkHandler {
     var delegate: ParksDelegate? { get set }
     var parks: [Park] { get set }
-    var realmManager: RealmManager<FavoriteParkRealmObject> { get set }
     
     func loadData()
     func removePark(at index: Int)
@@ -40,7 +39,6 @@ final class FavoriteParkManager: FavoriteParkHandler {
     }
     
     func removePark(at index: Int) {
-        print(index)
         let park = parks[index]
 
         do {
