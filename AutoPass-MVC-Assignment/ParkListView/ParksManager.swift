@@ -26,7 +26,8 @@ protocol ParksHandler: class {
 
     func loadData(page: Int)
     func refresh()
-    func parkStarredStateChanged(index: Int, to: Bool)
+    func parkStarredStateChanged(index: Int, to state: Bool)
+    func parkStarredStateChanged(park: Park, to state: Bool)
 }
 
 final class ParksManager: ParksHandler {
@@ -58,14 +59,19 @@ final class ParksManager: ParksHandler {
         delegate?.state = .Refresh(parks)
     }
     
-    func parkStarredStateChanged(index: Int, to: Bool) {
+    func parkStarredStateChanged(index: Int, to state: Bool) {
         let park = parks[index]
         
-        if to == true {
+        if state == true {
             let realmObject = FavoriteParkRealmObject(park)
             try? realmManager.add(object: realmObject, completionHandler: nil)
         }else {
             try? realmManager.remove(id: park.id, completionHandler: nil)
         }
+    }
+
+    func parkStarredStateChanged(park: Park, to state: Bool) {
+        guard let index = parks.index(where: { $0.id == park.id }) else { return }
+        parkStarredStateChanged(index: index, to: state)
     }
 }
