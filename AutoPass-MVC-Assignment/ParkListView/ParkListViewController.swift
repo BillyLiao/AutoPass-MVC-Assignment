@@ -83,9 +83,10 @@ extension ParkListViewController: UITableViewDelegate {
         
         if let cell = cell as? ParkCell {
             cell.mapButton.rx.tap.asDriver().drive(onNext: { [weak self] in
-                let rootViewController = UIApplication.shared.delegate?.window??.rootViewController
-                (rootViewController as? MainViewController)?.selectedIndex = 1
-                ((rootViewController as? MainViewController)?.selectedViewController as? MapViewController)?.targetPark = self?.parksHandler.parks[indexPath.row]
+                if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController as? MainViewController {
+                    rootViewController.selectedIndex = 1
+                    (rootViewController.selectedViewController as? MapViewController)?.targetPark = self?.parksHandler.parks[indexPath.row]
+                }
             }).disposed(by: cell.bag)
             
             cell.starButton.rx.tap.asDriver().drive(onNext: { [weak self] in

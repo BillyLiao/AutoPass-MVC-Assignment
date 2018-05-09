@@ -82,6 +82,13 @@ extension FavoritesViewController: UITableViewDelegate {
             cell.starButton.rx.tap.asDriver().drive(onNext: { [weak self] in
                 self?.favoriteParkManager.removePark(at: indexPath.row)
             }).disposed(by: cell.bag)
+            
+            cell.mapButton.rx.tap.asDriver().drive(onNext: { [weak self] in
+                if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController as? MainViewController {
+                    rootViewController.selectedIndex = 1
+                    (rootViewController.selectedViewController as? MapViewController)?.targetPark = self?.favoriteParkManager.parks[indexPath.row]
+                }
+            }).disposed(by: cell.bag)
         }
     }
 }
