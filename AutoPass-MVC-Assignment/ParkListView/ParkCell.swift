@@ -53,6 +53,7 @@ final class ParkCell: UITableViewCell {
         starButton.setImage(#imageLiteral(resourceName: "FavoriteButtonFilledIcon").withRenderingMode(.alwaysOriginal), for: .selected)
         starButton.tintColor = UIColor.clear
         mapButton.setTitle("Map", for: .normal)
+        mapButton.setTitleColor(CustomColor.mainBlueGreen, for: .normal)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 17)
         adminAreaLabel.font = UIFont.systemFont(ofSize: 17)
         introLabel.font = UIFont.systemFont(ofSize: 14)

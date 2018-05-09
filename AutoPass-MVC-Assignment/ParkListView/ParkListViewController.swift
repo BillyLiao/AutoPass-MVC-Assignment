@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import MapKit
 
 internal final class ParkListViewController: UIViewController, Navigable {
     
@@ -81,8 +82,11 @@ extension ParkListViewController: UITableViewDelegate {
         }
         
         if let cell = cell as? ParkCell {
-            cell.mapButton.rx.tap.asDriver().drive(onNext: {
-                // TODO: - Handle
+            cell.mapButton.rx.tap.asDriver().drive(onNext: { [weak self] in
+                if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController as? MainViewController {
+                    rootViewController.selectedIndex = 1
+                    (rootViewController.selectedViewController as? MapViewController)?.targetPark = self?.parksHandler.parks[indexPath.row]
+                }
             }).disposed(by: cell.bag)
             
             cell.starButton.rx.tap.asDriver().drive(onNext: { [weak self] in

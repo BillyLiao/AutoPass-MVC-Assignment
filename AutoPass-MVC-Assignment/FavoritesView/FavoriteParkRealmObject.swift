@@ -27,8 +27,8 @@ final class FavoriteParkRealmObject: RealmObject {
         self.openTime = park.openTime
         self.imageURLString = park.imageURL.absoluteString
         self.intro = park.intro
-        self.latitude = park.coordinate.latitude
-        self.longitude = park.coordinate.longitude
+        self.latitude = park.latitude
+        self.longitude = park.longitude
         self.adminArea = park.adminArea
         self.location = park.location
         self.type = park.type
