@@ -35,7 +35,7 @@ extension ParkListUIController: ParksDelegate {
         switch(state, newState) {
             
         case (.Loading, .Loading): toLoading()
-        case (.Loading, .Refresh): print("loading to refrest")
+        case (.Loading, .Refresh): print("loading to refresh")
         case (.Loading, .Success(let parks)): toSuccess(parks)
         case (.Refresh, .Success(let parks)): toSuccess(parks)
         case (.Success, .Loading): toLoading()
