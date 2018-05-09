@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class CustomCalloutView: UIView {
 
@@ -16,6 +17,8 @@ final class CustomCalloutView: UIView {
     let openTimeLabel: UILabel = UILabel()
     let starButton: StarButton = StarButton()
     let navigationButton: UIButton = UIButton()
+    
+    let bag = DisposeBag()
     
     // MARK: - Init
     public convenience init() {
@@ -33,7 +36,7 @@ final class CustomCalloutView: UIView {
         openTimeLabel.font = UIFont.systemFont(ofSize: 14)
         openTimeLabel.textColor = UIColor.gray
         navigationButton.setTitleColor(CustomColor.mainBlueGreen, for: .normal)
-        navigationButton.setTitle("Go!", for: .normal)
+        navigationButton.setTitle("GO", for: .normal)
         
         addSubview(nameLabel)
         addSubview(adminLabel)
@@ -58,7 +61,7 @@ final class CustomCalloutView: UIView {
         
         nameLabel.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().inset(8)
-            make.right.equalTo(starButton.snp.left).offset(8)
+            make.right.equalToSuperview().inset(46)
         }
         
         navigationButton.snp.makeConstraints { (make) in
@@ -70,13 +73,13 @@ final class CustomCalloutView: UIView {
         adminLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(8)
             make.top.equalTo(nameLabel.snp.bottom).offset(4)
-            make.right.equalTo(navigationButton.snp.left).inset(8)
+            make.right.equalToSuperview().inset(46)
         }
         
         openTimeLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(8)
             make.top.equalTo(adminLabel.snp.bottom).offset(4)
-            make.right.equalTo(navigationButton.snp.left).inset(8)
+            make.right.equalToSuperview().inset(46)
         }
     }
     
