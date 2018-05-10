@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum UIState<T> {
     case Loading
@@ -28,6 +29,7 @@ protocol ParksHandler: class {
     func refresh()
     func parkStarredStateChanged(index: Int, to state: Bool)
     func parkStarredStateChanged(park: Park, to state: Bool)
+    func getClosestPark(to location: CLLocation) -> Park?
 }
 
 final class ParksManager: ParksHandler {
@@ -73,5 +75,19 @@ final class ParksManager: ParksHandler {
     func parkStarredStateChanged(park: Park, to state: Bool) {
         guard let index = parks.index(where: { $0.id == park.id }) else { return }
         parkStarredStateChanged(index: index, to: state)
+    }
+    
+    func getClosestPark(to location: CLLocation) -> Park? {
+        var minDistance = CLLocationDistanceMax
+        var closetTarget: Park?
+        parks.forEach { (park) in
+            let parkLocation = CLLocation(latitude: park.coordinate.latitude, longitude: park.coordinate.longitude)
+            if location.distance(from: parkLocation) < minDistance {
+                minDistance = location.distance(from: parkLocation)
+                closetTarget = park
+            }
+        }
+        
+        return closetTarget
     }
 }

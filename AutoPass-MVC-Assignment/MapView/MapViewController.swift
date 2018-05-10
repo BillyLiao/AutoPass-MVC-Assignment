@@ -43,11 +43,12 @@ internal final class MapViewController: NavigationViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        
+        mapView.addAnnotations(parksHandler.parks)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         locationManager.startUpdatingLocation()
-        mapView.addAnnotations(parksHandler.parks)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -113,6 +114,7 @@ extension MapViewController: MKMapViewDelegate {
             }).disposed(by: calloutView.bag)
             
             view.addSubview(calloutView)
+            view.bringSubview(toFront: calloutView)
         }
     }
 
@@ -127,17 +129,9 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard targetPark == nil else { return }
-        var minDistance = CLLocationDistanceMax
-        var closetTarget: Park?
-        parksHandler.parks.forEach { (park) in
-            let parkLocation = CLLocation(latitude: park.coordinate.latitude, longitude: park.coordinate.longitude)
-            if let distance = manager.location?.distance(from: parkLocation), distance < minDistance {
-                minDistance = distance
-                closetTarget = park
-            }
+        guard targetPark == nil, let location = manager.location else { return }
+        if let closestTarget = parksHandler.getClosestPark(to: location) {
+            targetPark = closestTarget
         }
-        
-        if closetTarget != nil { targetPark = closetTarget }
     }
 }
