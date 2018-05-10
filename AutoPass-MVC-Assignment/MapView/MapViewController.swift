@@ -20,7 +20,7 @@ internal final class MapViewController: NavigationViewController {
     
     var targetPark: Park? {
         didSet{
-            guard targetPark != oldValue, targetPark != nil else { return }
+            guard targetPark != nil else { return }
             setCenterTo(park: targetPark!)
         }
     }
@@ -86,8 +86,6 @@ internal final class MapViewController: NavigationViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let park = view.annotation as? Park {
-            mapView.setCenter(park.coordinate, animated: true)
-            
             let calloutView = CustomCalloutView()
             calloutView.configure(with: park)
             calloutView.starButton.isSelected = parksHandler.realmManager.query(id: park.id) != nil
@@ -114,7 +112,6 @@ extension MapViewController: MKMapViewDelegate {
             }).disposed(by: calloutView.bag)
             
             view.addSubview(calloutView)
-            view.bringSubview(toFront: calloutView)
         }
     }
 
