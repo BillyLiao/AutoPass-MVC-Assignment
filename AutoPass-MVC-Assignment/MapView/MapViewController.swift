@@ -86,6 +86,8 @@ internal final class MapViewController: NavigationViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let park = view.annotation as? Park {
+            mapView.setCenter(park.coordinate, animated: true)
+            
             let calloutView = CustomCalloutView()
             calloutView.configure(with: park)
             calloutView.starButton.isSelected = parksHandler.realmManager.query(id: park.id) != nil
