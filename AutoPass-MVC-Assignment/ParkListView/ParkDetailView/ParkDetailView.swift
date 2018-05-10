@@ -25,6 +25,7 @@ final class ParkDetailView: UIScrollView {
         alwaysBounceVertical = true
         
         addSubview(contentView)
+        mainImageView.contentMode = .scaleAspectFit
         contentView.addSubview(mainImageView)
         contentView.addSubview(infoView)
         introLabel.font = UIFont.systemFont(ofSize: 16)
