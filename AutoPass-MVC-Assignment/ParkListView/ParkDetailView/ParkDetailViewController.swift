@@ -8,18 +8,14 @@
 
 import UIKit
 
-final class ParkDetailViewController: UIViewController, Navigable {
+final class ParkDetailViewController: NavigationViewController {
 
     let park: Park
     let parkDetailManager: ParkDetailHandler
     private var parkDetailUIController: ParkDetailUIController!
     
     // MARK: - View Components
-    var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
     var detailView: ParkDetailView = ParkDetailView()
-    
-    // MARK: TransitioningDelegate
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
     
     init(park: Park, parkDetailManager: ParkDetailHandler) {
         self.park = park
@@ -34,7 +30,9 @@ final class ParkDetailViewController: UIViewController, Navigable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavigationBar()
+        navigationBar.setButton(at: .left, type: .back)
+        navigationBar.title = park.parkName
+        navigationBar.delegate = self
         
         view.addSubview(detailView)
         detailView.snp.makeConstraints { (make) in
@@ -56,13 +54,6 @@ final class ParkDetailViewController: UIViewController, Navigable {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func configureNavigationBar() {
-        view.addSubview(navigationBar)
-        navigationBar.setButton(at: .left, type: .back)
-        navigationBar.title = park.parkName
-        navigationBar.delegate = self
     }
 }
 

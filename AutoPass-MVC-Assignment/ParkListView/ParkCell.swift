@@ -45,7 +45,7 @@ final class ParkCell: UITableViewCell {
         super.awakeFromNib()
         
         self.selectionStyle = .none
-        
+
         mainImageView.layer.cornerRadius = mainImageView.frame.width/2
         mainImageView.clipsToBounds = true
         starButton.setTitle("", for: .normal)

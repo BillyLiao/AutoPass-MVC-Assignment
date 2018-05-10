@@ -12,6 +12,7 @@
 		5114EEEC209F673900B91B25 /* ParkFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114EEEB209F673900B91B25 /* ParkFacility.swift */; };
 		5114EEEE209F678200B91B25 /* ParkFacilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114EEED209F678200B91B25 /* ParkFacilityList.swift */; };
 		514766BB20A3030000FCC895 /* MKAnnotationView+CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514766BA20A3030000FCC895 /* MKAnnotationView+CustomUIView.swift */; };
+		514766BD20A3DD7000FCC895 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514766BC20A3DD7000FCC895 /* NavigationViewController.swift */; };
 		514B958A209DD6A3000B8D00 /* ParkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B9588209DD6A3000B8D00 /* ParkCell.swift */; };
 		514B958B209DD6A3000B8D00 /* ParkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 514B9589209DD6A3000B8D00 /* ParkCell.xib */; };
 		514B958E209ED345000B8D00 /* ParkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B958D209ED345000B8D00 /* ParkDetailViewController.swift */; };
@@ -75,6 +76,7 @@
 		5114EEEB209F673900B91B25 /* ParkFacility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkFacility.swift; sourceTree = "<group>"; };
 		5114EEED209F678200B91B25 /* ParkFacilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkFacilityList.swift; sourceTree = "<group>"; };
 		514766BA20A3030000FCC895 /* MKAnnotationView+CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+CustomUIView.swift"; sourceTree = "<group>"; };
+		514766BC20A3DD7000FCC895 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		514B9588209DD6A3000B8D00 /* ParkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCell.swift; sourceTree = "<group>"; };
 		514B9589209DD6A3000B8D00 /* ParkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCell.xib; sourceTree = "<group>"; };
 		514B958D209ED345000B8D00 /* ParkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				51BE22D6209D7A3300FF0867 /* ColorgyNavigationBar.swift */,
 				51BE22D7209D7A3300FF0867 /* ColorgyNavigationTransitioningDelegate.swift */,
 				51BE22D8209D7A3300FF0867 /* Navigable.swift */,
+				514766BC20A3DD7000FCC895 /* NavigationViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				51BE22ED209D7A3400FF0867 /* JSONDecodable.swift in Sources */,
 				5114EEEA209F666D00B91B25 /* GetParkFacilityList.swift in Sources */,
 				51BE2302209D7FFF00FF0867 /* MapViewController.swift in Sources */,
+				514766BD20A3DD7000FCC895 /* NavigationViewController.swift in Sources */,
 				51BE22EE209D7A3400FF0867 /* NetworkClient.swift in Sources */,
 				5114EEEC209F673900B91B25 /* ParkFacility.swift in Sources */,
 				51A6B75D209DB6880096D983 /* LoadingView.swift in Sources */,

@@ -11,13 +11,11 @@ import MapKit
 import SnapKit
 import RxCocoa
 
-internal final class MapViewController: UIViewController, Navigable {
+internal final class MapViewController: NavigationViewController {
 
-    var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
     private var mapView: MKMapView = MKMapView()
     
     var parksHandler: ParksHandler
-    
     let locationManager = CLLocationManager()
     
     var targetPark: Park? {
@@ -26,8 +24,6 @@ internal final class MapViewController: UIViewController, Navigable {
             setCenterTo(park: targetPark!)
         }
     }
-    
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
     
     init(parksHandler: ParksHandler) {
         self.parksHandler = parksHandler
@@ -41,8 +37,7 @@ internal final class MapViewController: UIViewController, Navigable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        configureNavigationBar()
+        navigationBar.title = tabBarItem.title
         configureMapView()
         
         locationManager.requestWhenInUseAuthorization()
@@ -66,11 +61,6 @@ internal final class MapViewController: UIViewController, Navigable {
     }
     
     // MARK: - View Configuration
-    func configureNavigationBar() {
-        view.addSubview(navigationBar)
-        navigationBar.title = tabBarItem.title
-    }
-    
     private func configureMapView() {
         view.addSubview(mapView)
         
@@ -88,7 +78,7 @@ internal final class MapViewController: UIViewController, Navigable {
         let adjustedRegion = mapView.regionThatFits(region)
 
         mapView.setRegion(adjustedRegion, animated: false)
-        mapView.selectAnnotation(park, animated: true)
+        mapView.selectAnnotation(park, animated: false)
     }
 }
 

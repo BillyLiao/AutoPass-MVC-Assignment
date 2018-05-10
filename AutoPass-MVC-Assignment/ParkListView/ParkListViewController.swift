@@ -12,16 +12,12 @@ import RxSwift
 import RxCocoa
 import MapKit
 
-internal final class ParkListViewController: UIViewController, Navigable {
+internal final class ParkListViewController: NavigationViewController {
     
     // MARK: - View Components
-    var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
     private let parksHandler: ParksHandler
     private var parkListUIController: ParkListUIController!
     private let tableView: UITableView = UITableView()
-    
-    // MARK: - Transitioning Delegate
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
     
     init(parksHandler: ParksHandler) {
         
@@ -38,7 +34,7 @@ internal final class ParkListViewController: UIViewController, Navigable {
 
         view.backgroundColor = UIColor.white
         
-        configureNavigationBar()
+        navigationBar.title = tabBarItem.title
         configureTableView()
         
         parkListUIController = ParkListUIController(view: view, tableView: tableView)
@@ -57,17 +53,13 @@ internal final class ParkListViewController: UIViewController, Navigable {
     }
 
     // MARK: - View Configuration
-    func configureNavigationBar() {
-        view.addSubview(navigationBar)
-        navigationBar.title = tabBarItem.title
-    }
-    
     private func configureTableView() {
         view.addSubview(tableView)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.delegate = self
+        tableView.separatorStyle = .none
         tableView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(navigationBar.snp.bottom)

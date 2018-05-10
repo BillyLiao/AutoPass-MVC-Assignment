@@ -9,17 +9,13 @@
 import UIKit
 import RxSwift
 
-internal final class FavoritesViewController: UIViewController, Navigable {
+internal final class FavoritesViewController: NavigationViewController {
 
-    // MARK: - View Components
-    var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
     let tableView: UITableView = UITableView()
     
     var favoriteParkManager: FavoriteParkHandler
     var parkListUIController: FavoriteParkListUIController!
     
-    // MARK: - Transition Delegate
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
     
     init(parkManager: FavoriteParkHandler) {
         self.favoriteParkManager = parkManager
@@ -33,7 +29,7 @@ internal final class FavoritesViewController: UIViewController, Navigable {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        configureNavigationBar()
+        navigationBar.title = tabBarItem.title
         configureTableView()
     
         parkListUIController = FavoriteParkListUIController(view: view, tableView: tableView)
@@ -47,11 +43,6 @@ internal final class FavoritesViewController: UIViewController, Navigable {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func configureNavigationBar() {
-        navigationBar.title = tabBarItem.title
-        view.addSubview(navigationBar)
     }
     
     private func configureTableView() {

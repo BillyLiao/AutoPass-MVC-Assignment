@@ -8,14 +8,10 @@
 
 import UIKit
 
-final class SpotDetailViewController: UIViewController, Navigable {
+final class SpotDetailViewController: NavigationViewController {
 
-    var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
     var spotDetailView: SpotDetailView = SpotDetailView()
-    
     let spot: ParkSpot
-    
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate?
     
     init(spot: ParkSpot) {
         self.spot = spot
@@ -31,7 +27,9 @@ final class SpotDetailViewController: UIViewController, Navigable {
 
         view.backgroundColor = UIColor.white
         
-        configureNavigationBar()
+        navigationBar.setButton(at: .left, type: .back)
+        navigationBar.title = spot.parkName
+        navigationBar.delegate = self
         
         view.addSubview(spotDetailView)
         spotDetailView.snp.makeConstraints { (make) in
@@ -50,13 +48,6 @@ final class SpotDetailViewController: UIViewController, Navigable {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func configureNavigationBar() {
-        view.addSubview(navigationBar)
-        navigationBar.setButton(at: .left, type: .back)
-        navigationBar.title = spot.parkName
-        navigationBar.delegate = self
     }
 }
 
