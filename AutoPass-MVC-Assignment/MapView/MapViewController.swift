@@ -104,8 +104,14 @@ extension MapViewController: MKMapViewDelegate {
                 mapItem.openInMaps(launchOptions: options)
             }).disposed(by: calloutView.bag)
             
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(calloutViewTapped))
+            let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
             calloutView.addGestureRecognizer(tapGesture)
+            tapGesture.rx.event.bind(onNext: { [ weak self](recogizer) in
+                let parkDetailManager = ParkDetailManager.init(GetParkSpotList(), GetParkFacilityList(), parkName: park.parkName)
+                let vc = ParkDetailViewController(park: park, parkDetailManager: parkDetailManager)
+                self?.navigationTransitionDelegate?.presentingViewController = vc
+                self?.asyncPresent(vc, animated: true)
+            }).disposed(by: calloutView.bag)
             
             view.addSubview(calloutView)
         }
@@ -117,14 +123,6 @@ extension MapViewController: MKMapViewDelegate {
                 subView.removeFromSuperview()
             }
         }
-    }
-    
-    @objc func calloutViewTapped() {
-        guard let park = mapView.selectedAnnotations.first as? Park else { return }
-        let parkDetailManager = ParkDetailManager.init(GetParkSpotList(), GetParkFacilityList(), parkName: park.parkName)
-        let vc = ParkDetailViewController(park: park, parkDetailManager: parkDetailManager)
-        navigationTransitionDelegate?.presentingViewController = vc
-        self.asyncPresent(vc, animated: true)
     }
 }
 
