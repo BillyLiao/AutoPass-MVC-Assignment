@@ -93,7 +93,6 @@ extension MapViewController: MKMapViewDelegate {
             calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.26)
             
             calloutView.starButton.rx.tap.asDriver().drive(onNext: { [weak self] in
-                calloutView.starButton.isSelected = !calloutView.starButton.isSelected
                 self?.parksHandler.parkStarredStateChanged(park: park, to: calloutView.starButton.isSelected)
             }).disposed(by: calloutView.bag)
             

@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import RxSwift
 
 final class StarButton: UIButton {
 
+    let bag = DisposeBag()
+    
     // MARK: - Init
     public convenience init() {
         self.init(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        self.setTitle("", for: .normal)
-        self.setImage(#imageLiteral(resourceName: "FavoriteButtonUnfilledIcon").withRenderingMode(.alwaysOriginal), for: .normal)
-        self.setImage(#imageLiteral(resourceName: "FavoriteButtonFilledIcon").withRenderingMode(.alwaysOriginal), for: .selected)
+        setTitle("", for: .normal)
+        setImage(#imageLiteral(resourceName: "FavoriteButtonUnfilledIcon").withRenderingMode(.alwaysOriginal), for: .normal)
+        setImage(#imageLiteral(resourceName: "FavoriteButtonFilledIcon").withRenderingMode(.alwaysOriginal), for: .selected)
+        
+        rx.tap.asDriver().drive(onNext: { [weak self] in
+            self?.isSelected = !(self?.isSelected ?? true)
+        }).disposed(by: bag)
     }
     
     private override init(frame: CGRect) {
