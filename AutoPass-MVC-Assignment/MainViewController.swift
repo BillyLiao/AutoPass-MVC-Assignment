@@ -32,6 +32,10 @@ internal final class MainViewController: UITabBarController {
 
         setViewControllers(vcs, animated: false)
     }
+    
+    override func viewDidLayoutSubviews() {
+        view.frame = UIScreen.main.bounds
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
