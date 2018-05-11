@@ -71,6 +71,8 @@ final class SpotDetailView: UIScrollView {
             make.left.right.bottom.equalTo(contentView)
             make.top.equalTo(openTimeLabel.snp.bottom).offset(12)
         }
+        
+        contentSize = CGSize(width: contentSize.width , height: introLabel.frame.maxY + 16)
     }
     
     func configure(with spot: ParkSpot) {
